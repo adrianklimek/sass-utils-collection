@@ -1,0 +1,14 @@
+@mixin reset-button() {
+  background: none;
+  
+  border: none;
+  border-radius: 0;
+  outline: none;
+  padding: 0;
+
+  color: inherit;
+  font: inherit;
+  
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
