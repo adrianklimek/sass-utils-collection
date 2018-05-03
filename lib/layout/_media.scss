@@ -1,0 +1,25 @@
+$media-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 1170px,
+  xl: 1440px
+) !default;
+
+@mixin media($breakpoint, $isMobileFirst: true) {
+  $breakpoint-size: map-get($media-breakpoints, $breakpoint);
+
+  @if map-has-key($media-breakpoints, $breakpoint) and ($breakpoint-size != 0) {
+    @if $isMobileFirst {
+      @media (min-width: $breakpoint-size) {
+        @content;
+      }
+    } @else {
+      @media (max-width: $breakpoint-size - 1) {
+        @content;
+      }
+    }
+  } @else {
+    @content;
+  }
+}
