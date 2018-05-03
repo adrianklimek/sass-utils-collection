@@ -1,0 +1,6 @@
+@mixin reset-placeholder {
+  &::placeholder {
+    opacity: 1;
+    color: inherit;
+  }
+}
