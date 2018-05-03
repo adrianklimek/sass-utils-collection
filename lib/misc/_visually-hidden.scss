@@ -1,0 +1,15 @@
+@mixin visually-hidden($isFocusable) {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+
+  @if $isFocusable {
+    &:focus {
+      position: static;
+      width: auto;
+      height: auto;
+    }
+  }
+}
