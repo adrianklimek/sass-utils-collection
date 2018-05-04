@@ -1,0 +1,84 @@
+@import "./media";
+
+$grid-gutter: (
+  xs: 16px,
+  md: 24px
+) !default;
+
+$grid-space-around: (
+  xs: 24px,
+  md: 64px,
+  lg: 40px
+) !default;
+
+$grid-columns: (
+  default: 12,
+  xs: 12
+) !default;
+
+$grid-container-width: 1440px !default;
+
+@mixin grid-container() {
+  width: 100%;
+  max-width: $grid-container-width;
+  margin: 0 auto;
+
+  @each $breakpoint-name, $space in $grid-space-around {
+    @include media($breakpoint-name) {
+      padding-left: $space;
+      padding-right: $space;
+    }
+  }
+}
+
+@mixin grid-row() {
+  display: flex;
+  flex-wrap: wrap;
+
+  @each $breakpoint-name, $gutter in $grid-gutter {
+    @include media($breakpoint-name) {
+      margin-left: -$gutter / 2;
+      margin-right: -$gutter / 2;
+    }
+  }
+}
+
+@mixin set-grid-column-width($width) {
+  width: $width;
+  max-width: $width;
+  flex-basis: $width;
+}
+
+@function grid-column-width($breakpoint-name, $columns-count) {
+  @if map-has-key($grid-columns, $breakpoint-name) {
+    @return $columns-count / map-get($grid-columns, $breakpoint-name) * 100%;
+  } @else {
+    @return $columns-count / map-get($grid-columns, default) * 100%;
+  }
+}
+
+@mixin grid-column($columns) {
+  flex-grow: 0;
+  flex-shrink: 0;
+
+  @each $breakpoint-name, $gutter in $grid-gutter {
+    @include media($breakpoint-name) {
+      margin-left: $gutter / 2;
+      margin-right: $gutter / 2;
+    }
+  }
+
+  @each $breakpoint-name, $columns-count in $columns {
+    @include media($breakpoint-name) {
+      @include set-grid-column-width(grid-column-width($breakpoint-name, $columns-count));
+    }
+  }
+}
+
+@mixin grid-offset($columns) {
+  @each $breakpoint-name, $column-count in $columns {
+    @include media($breakpoint-name) {
+      margin-left: grid-column-width($breakpoint-name, $columns-count);
+    }
+  }
+}
