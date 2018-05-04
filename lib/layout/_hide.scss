@@ -7,7 +7,7 @@
 }
 
 @mixin hide-down($breakpoint-name) {
-  @include media-down($breakpoint-name) {
+  @include media($breakpoint-name, false) {
     display: none;
   }
 }
