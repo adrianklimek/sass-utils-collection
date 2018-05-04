@@ -1,4 +1,8 @@
+@import './reset-appearance';
+
 @mixin reset-input($type: text) {
+  @include reset-appearance;
+
   background: none;
   background-clip: content-box;
   border: none;
@@ -7,10 +11,6 @@
   border-radius: 0;
 
   box-shadow: none;
-
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
 
   @if $type == 'number' {
     &::-webkit-inner-spin-button,

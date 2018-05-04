@@ -1,4 +1,8 @@
+@import './reset-appearance';
+
 @mixin reset-button() {
+  @include reset-appearance;
+  
   background: none;
   
   border: none;
@@ -8,7 +12,4 @@
 
   color: inherit;
   font: inherit;
-  
-  -moz-appearance: none;
-  -webkit-appearance: none;
 }
