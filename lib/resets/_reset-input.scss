@@ -1,18 +1,22 @@
-@import './reset-appearance';
+@import '../misc/prefix';
 
 @mixin reset-input($type: text) {
-  @include reset-appearance;
+  background: none {
+    clip: content-box;
+  }
 
-  background: none;
-  background-clip: content-box;
-  border: none;
+  border: none {
+    radius: 0
+  }
+
   padding: none;
   outline: none;
-  border-radius: 0;
 
   box-shadow: none;
 
   @if $type == 'number' {
+    @include prefix(appearance, textfield, webkit, moz);
+
     &::-webkit-inner-spin-button,
     &::-webkit-outer-spin-button {
       -webkit-appearance: none;
