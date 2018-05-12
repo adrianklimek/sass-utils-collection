@@ -3,23 +3,38 @@ $media-breakpoints: (
   sm: 576px,
   md: 768px,
   lg: 1170px,
-  xl: 1440px
+  xl: 1440px,
 ) !default;
 
 @mixin media($breakpoint, $isMobileFirst: true) {
+  @if not map-has-key($media-breakpoints, $breakpoint) {
+    @error '[media]: #{$breakpoint} is not defined';
+  }
+  
   $breakpoint-size: map-get($media-breakpoints, $breakpoint);
-
-  @if map-has-key($media-breakpoints, $breakpoint) and ($breakpoint-size != 0) {
-    @if $isMobileFirst {
-      @media (min-width: $breakpoint-size) {
-        @content;
-      }
-    } @else {
-      @media (max-width: $breakpoint-size - 1) {
-        @content;
-      }
+  @if ($breakpoint-size != 0) {
+    $media: if(
+      $isMobileFirst, 
+      'min-width: #{$breakpoint-size}',
+      'max-width: #{$breakpoint-size - 1}'
+    );
+    
+    @media (#{$media}) {
+      @content;
     }
   } @else {
+    @content;
+  }
+}
+
+@mixin media-up($breakpoint) {
+  @include media($breakpoint) {
+    @content;
+  }
+}
+
+@mixin media-down($breakpoint) {
+  @include media($breakpoint, false) {
     @content;
   }
 }

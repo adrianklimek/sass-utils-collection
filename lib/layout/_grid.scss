@@ -2,18 +2,18 @@
 
 $grid-gutter: (
   xs: 16px,
-  md: 24px
+  md: 24px,
 ) !default;
 
 $grid-space-around: (
   xs: 24px,
   md: 64px,
-  lg: 40px
+  lg: 40px,
 ) !default;
 
 $grid-columns: (
   default: 12,
-  xs: 12
+  xs: 12,
 ) !default;
 
 $grid-container-width: 1440px !default;
@@ -24,7 +24,7 @@ $grid-container-width: 1440px !default;
   margin: 0 auto;
 
   @each $breakpoint-name, $space in $grid-space-around {
-    @include media($breakpoint-name) {
+    @include media-up($breakpoint-name) {
       padding-left: $space;
       padding-right: $space;
     }
@@ -36,7 +36,7 @@ $grid-container-width: 1440px !default;
   flex-wrap: wrap;
 
   @each $breakpoint-name, $gutter in $grid-gutter {
-    @include media($breakpoint-name) {
+    @include media-up($breakpoint-name) {
       margin-left: -$gutter / 2;
       margin-right: -$gutter / 2;
     }
@@ -62,14 +62,14 @@ $grid-container-width: 1440px !default;
   flex-shrink: 0;
 
   @each $breakpoint-name, $gutter in $grid-gutter {
-    @include media($breakpoint-name) {
+    @include media-up($breakpoint-name) {
       margin-left: $gutter / 2;
       margin-right: $gutter / 2;
     }
   }
 
   @each $breakpoint-name, $columns-count in $columns {
-    @include media($breakpoint-name) {
+    @include media-up($breakpoint-name) {
       @include set-grid-column-width(grid-column-width($breakpoint-name, $columns-count));
     }
   }
@@ -77,7 +77,7 @@ $grid-container-width: 1440px !default;
 
 @mixin grid-offset($columns) {
   @each $breakpoint-name, $column-count in $columns {
-    @include media($breakpoint-name) {
+    @include media-up($breakpoint-name) {
       margin-left: grid-column-width($breakpoint-name, $columns-count);
     }
   }

@@ -1,13 +1,13 @@
 @import "./media";
 
 @mixin hide-up($breakpoint-name) {
-  @include media($breakpoint-name) {
+  @include media-up($breakpoint-name) {
     display: none;
   }
 }
 
 @mixin hide-down($breakpoint-name) {
-  @include media($breakpoint-name, false) {
+  @include media-down($breakpoint-name) {
     display: none;
   }
 }
