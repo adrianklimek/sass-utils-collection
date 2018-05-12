@@ -1,6 +1,6 @@
 @import './reset-appearance';
 
-@mixin reset-button() {
+@mixin reset-button {
   @include reset-appearance;
   
   background: none;

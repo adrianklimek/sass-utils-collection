@@ -18,7 +18,7 @@ $grid-columns: (
 
 $grid-container-width: 1440px !default;
 
-@mixin grid-container() {
+@mixin grid-container {
   width: 100%;
   max-width: $grid-container-width;
   margin: 0 auto;
@@ -31,7 +31,7 @@ $grid-container-width: 1440px !default;
   }
 }
 
-@mixin grid-row() {
+@mixin grid-row {
   display: flex;
   flex-wrap: wrap;
 
