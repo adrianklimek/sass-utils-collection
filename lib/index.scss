@@ -1,18 +1,19 @@
 // Resets
-@import "./resets/reset-button",
-        "./resets/reset-placeholder",
-        "./resets/reset-appearance",
-        "./resets/reset-list",
-        "./resets/reset-link",
-        "./resets/reset-input";
+@import './resets/reset-button',
+        './resets/reset-placeholder',
+        './resets/reset-appearance',
+        './resets/reset-list',
+        './resets/reset-link',
+        './resets/reset-input';
 
 // Layout
-@import "./layout/media",
-        "./layout/grid"
-        "./layout/hide";
+@import './layout/media',
+        './layout/grid',
+        './layout/hide';
 
 // Misc
-@import "./misc/random-color",
-        "./misc/visually-hidden",
-        "./misc/clearfix",
-        "./misc/responsive-img";
+@import './misc/random-color',
+        './misc/visually-hidden',
+        './misc/clearfix',
+        './misc/responsive-img',
+        './misc/prefix';
