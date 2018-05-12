@@ -1,0 +1,6 @@
+@mixin center-content($type: both) {
+  display: flex;
+  flex-direction: row;
+  justify-content: if($type == both or $type == horizontally, center, null);
+  align-items: if($type == both or $type == vertically, center, null)
+}
