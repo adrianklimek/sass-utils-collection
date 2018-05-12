@@ -25,8 +25,10 @@ $grid-container-width: 1440px !default;
 
   @each $breakpoint-name, $space in $grid-space-around {
     @include media-up($breakpoint-name) {
-      padding-left: $space;
-      padding-right: $space;
+      padding: {
+        left: $space;
+        right: $space;
+      }
     }
   }
 }
@@ -37,8 +39,10 @@ $grid-container-width: 1440px !default;
 
   @each $breakpoint-name, $gutter in $grid-gutter {
     @include media-up($breakpoint-name) {
-      margin-left: -$gutter / 2;
-      margin-right: -$gutter / 2;
+      margin: {
+        left: -$gutter / 2;
+        right: -$gutter / 2;
+      }
     }
   }
 }
@@ -58,13 +62,17 @@ $grid-container-width: 1440px !default;
 }
 
 @mixin grid-column($columns) {
-  flex-grow: 0;
-  flex-shrink: 0;
+  flex: {
+    grow: 0;
+    shrink: 0;
+  }
 
   @each $breakpoint-name, $gutter in $grid-gutter {
     @include media-up($breakpoint-name) {
-      margin-left: $gutter / 2;
-      margin-right: $gutter / 2;
+      padding: {
+        left: $gutter / 2;
+        right: $gutter / 2;
+      }
     }
   }
 
