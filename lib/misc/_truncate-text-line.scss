@@ -1,0 +1,9 @@
+@mixin truncate-text-line($width) {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  @if $width {
+    width: $width;
+  }
+}
