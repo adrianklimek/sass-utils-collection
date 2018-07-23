@@ -53,6 +53,12 @@ $grid-container-width: 1440px !default;
   flex-basis: $width;
 }
 
+@mixin set-nested-column-width($columns-count, $container-size, $breakpoint-name) {
+  @include set-grid-column-width(
+    grid-column-width($breakpoint-name, $columns-count) * (12 / $container-size)
+  );
+}
+
 @function grid-column-width($breakpoint-name, $columns-count) {
   @if map-has-key($grid-columns, $breakpoint-name) {
     @return $columns-count / map-get($grid-columns, $breakpoint-name) * 100%;
