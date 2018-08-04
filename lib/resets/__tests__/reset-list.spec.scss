@@ -1,0 +1,18 @@
+@import '../../test';
+@import '../reset-list';
+
+@include describe('[mixin] reset-list - Resets a list\'s default styles') {
+  @include it('Removes `list-style`, `margin` and `padding` properties') {
+    @include assert {
+      @include output {
+        @include reset-list;
+      }
+
+      @include expect {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+}

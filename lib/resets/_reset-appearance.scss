@@ -1,4 +1,4 @@
-@include '../misc/prefix';
+@import '../misc/prefix';
 
 @mixin reset-appearance {
   @include prefix(appearance, none, webkit, moz);

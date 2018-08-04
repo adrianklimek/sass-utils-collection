@@ -1,0 +1,41 @@
+@import '../../test';
+@import '../reset-input';
+
+@include describe('[mixin] reset-input - Resets an input\'s default styles') {
+  @include it('Removes `background`, `outline`, `padding`, `border`, `border-radius`, `box-shadow` properties and sets `background-clip to `content-box`') {
+    @include assert {
+      @include output {
+        @include reset-input;
+      }
+
+      @include contains {
+        background: none;
+        background-clip: content-box;
+        border: none;
+        border-radius: 0;
+        padding: none;
+        outline: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  @include it('Removes browser\'s default number input styles when `$type` argument is set to `number`') {
+    @include assert {
+      @include output {
+        @include reset-input(number)
+      }
+
+      @include contains {
+        -webkit-appearance: textfield;
+        -moz-appearance: textfield;
+        appearance: textfield;
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
