@@ -1,0 +1,36 @@
+@import '../../test';
+@import '../hide-visually';
+
+@include describe('[mixin] hide-visually - Applies visually hidden utility (A11Y)') {
+  @include it('Sets properties needed to hide content on screens') {
+    @include assert {
+      @include output {
+        @include hide-visually;
+      }
+
+      @include expect {
+        position: absolute !important;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+        clip: rect(1px, 1px, 1px, 1px);
+      }
+    }
+  }
+
+  @include it('Enables focusable elements to be visible when they receive focus') {
+    @include assert {
+      @include output {
+        @include hide-visually(true);
+      }
+
+      @include contains {
+        &:focus {
+          position: static;
+          width: auto;
+          height: auto;
+        }
+      }
+    }
+  }
+}

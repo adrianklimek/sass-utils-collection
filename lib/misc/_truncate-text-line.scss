@@ -1,4 +1,4 @@
-@mixin truncate-text-line($width: 0) {
+@mixin truncate-text-line($width: null) {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;

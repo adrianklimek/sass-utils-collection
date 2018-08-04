@@ -1,4 +1,4 @@
-@mixin visually-hidden($is-focusable) {
+@mixin hide-visually($is-focusable: false) {
   position: absolute !important;
   height: 1px;
   width: 1px;

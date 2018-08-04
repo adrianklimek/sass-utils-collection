@@ -1,0 +1,57 @@
+@import '../../test';
+@import '../dynamic-shadow';
+
+@include describe('[mixin] dynamic-shadow - Creates shadow based on an element\'s background') {
+  @include it('Sets properties needed to apply a shadow effect') {
+    @include assert {
+      @include output {
+        @include dynamic-shadow(0, 0, 20%);
+      }
+
+      @include contains {
+        position: relative;
+        z-index: 1;
+
+        &::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background: inherit;
+          border-radius: inherit;
+          z-index: -1;
+        }
+      }
+    }
+  }
+
+  @include it('Sets opacity to 0.75 by default') {
+    @include assert {
+      @include output {
+        @include dynamic-shadow(0, 0, 20%);
+      }
+
+      @include contains {
+        &::after {
+          opacity: 0.75;
+        }
+      }
+    }
+  }
+
+  @include it('Sets correct offset and blur radius') {
+    @include assert {
+      @include output {
+        @include dynamic-shadow(20px, 12px, 20%);
+      }
+
+      @include contains {
+        &::after {
+          left: 20px;
+          top: 12px;
+          filter: blur(20%);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@import '../../test';
+@import '../truncate-text-line';
+
+@include describe('[mixin] truncate-text-line - Truncates text line') {
+  @include it('Sets properties needed to truncate text line') {
+    @include assert {
+      @include output {
+        @include truncate-text-line;
+      }
+
+      @include expect {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+
+  @include it('Sets width of truncating text') {
+    @include assert {
+      @include output {
+        @include truncate-text-line(200px);
+      }
+
+      @include expect {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 200px;
+      }
+    }
+  }
+}
