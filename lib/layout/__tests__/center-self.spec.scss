@@ -1,0 +1,68 @@
+@import '../../test';
+@import '../center-self';
+
+@include describe('[mixin] center-self - Centers an element') {
+  @include it('Centers element vertically and horizontally by default') {
+    @include assert {
+      @include output {
+        @include center-self;
+      }
+
+      @include contains {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  @include it('Centers element vertically when `$type` is set to `vertically`') {
+    @include assert {
+      @include output {
+        @include center-self(vertically);
+      }
+
+      @include contains {
+        top: 50%;
+        transform: translate(0, -50%);
+      }
+    }
+  }
+
+  @include it('Centers element horizontally when `$type` is set to `horizontally`') {
+    @include assert {
+      @include output {
+        @include center-self(horizontally);
+      }
+
+      @include contains {
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+    }
+  }
+
+  @include it('Sets `position` to `absolute` by default') {
+    @include assert {
+      @include output {
+        @include center-self;
+      }
+
+      @include contains {
+        position: absolute;
+      }
+    }
+  }
+
+  @include it('Allows to set the `position` property') {
+    @include assert {
+      @include output {
+        @include center-self(both, relative);
+      }
+
+      @include contains {
+        position: relative;
+      }
+    }
+  }
+}

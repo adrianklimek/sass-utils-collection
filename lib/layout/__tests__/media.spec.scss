@@ -1,0 +1,56 @@
+@import '../../test';
+@import '../media';
+
+@include describe('[mixin] media - Applies styles to given media query') {
+  @include it('Applies styles to screen resolutions equal or greater than given one by default') {
+    @include assert {
+      @include output {
+        @include media(md) {
+          background: red;
+        };
+      }
+
+      @include expect {
+        @media (min-width: map-get($media-breakpoints, md)) {
+          background: red
+        }
+      }
+    }
+  }
+}
+
+@include describe('[mixin] media-up - Applies styles to given media query') {
+  @include it('Applies styles to screen resolutions equal or greater than given one') {
+    @include assert {
+      @include output {
+        @include media-up(md) {
+          background: red;
+        };
+      }
+
+      @include expect {
+        @media (min-width: map-get($media-breakpoints, md)) {
+          background: red
+        }
+      }
+    }
+  }
+}
+
+@include describe('[mixin] media-down - Applies styles to given media query') {
+  @include it('Applies styles to screen resolutions smaller than given one') {
+    @include assert {
+      @include output {
+        @include media-down(md) {
+          background: red;
+        };
+      }
+
+      @include expect {
+        @media (max-width: map-get($media-breakpoints, md) - 1) {
+          background: red
+        }
+      }
+    }
+  }
+}

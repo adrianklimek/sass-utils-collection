@@ -1,0 +1,47 @@
+@import '../../test';
+@import '../center-content';
+
+@include describe('[mixin] center-content - Centers an element\'s content') {
+  @include it('Centers content vertically and horizontally by default') {
+    @include assert {
+      @include output {
+        @include center-content;
+      }
+
+      @include expect {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  @include it('Centers content vertically when `$type` is set to `vertically`') {
+    @include assert {
+      @include output {
+        @include center-content(vertically);
+      }
+
+      @include expect {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+  }
+
+  @include it('Centers content horizontally when `$type` is set to `horizontally`') {
+    @include assert {
+      @include output {
+        @include center-content(horizontally);
+      }
+
+      @include expect {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+  }
+}
