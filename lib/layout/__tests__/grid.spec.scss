@@ -1,0 +1,121 @@
+@import '../../test';
+@import '../grid';
+@import '../media';
+
+@include describe('[mixin] grid-container - Creates grid container') {
+  @include it('Sets styles needed to create a container based on a configuration') {
+    @include assert {
+      @include output {
+        @include grid-container;
+      }
+
+      @include contains {
+        width: 100%;
+        margin: 0 auto;
+        max-width: map-get($grid-container-width, xs);
+        padding-left: map-get($grid-space-around, xs);
+        padding-right: map-get($grid-space-around, xs);
+      }
+    }
+  }
+}
+
+@include describe('[mixin] grid-row - Creates grid row') {
+  @include it('Sets styles needed to create a row based on a configuration') {
+    @include assert {
+      @include output {
+        @include grid-row;
+      }
+
+      @include contains {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: map-get($grid-gutter, xs) / -2;
+        margin-right: map-get($grid-gutter, xs) / -2;
+      }
+    }
+  }
+}
+
+@include describe('[mixin] set-grid-column-width - Sets grid column width properties') {
+  @include it('Sets width properties needed for cross browser support') {
+    @include assert {
+      @include output {
+        @include set-grid-column-width(50%);
+      }
+
+      @include contains {
+        width: 50%;
+        max-width: 50%;
+        flex-basis: 50%;
+      }
+    }
+  }
+}
+
+@include describe('[mixin] set-nested-column-width - Sets grid column width properties for nested column') {
+  @include it('Sets width properties needed for cross browser support') {
+    @include assert {
+      @include output {
+        @include set-nested-column-width(4, 9, xs);
+      }
+
+      @include contains {
+        width: 44.44444%;
+        max-width: 44.44444%;
+        flex-basis: 44.44444%;
+      }
+    }
+  }
+}
+
+@include describe('[function] grid-column-width - Gets column width based on given parameters') {
+  @include it('Gets column width based on given parameters') {
+    @include assert-equal(grid-column-width(md, 4), 4 / map-get($grid-columns, default) * 100%)
+  }
+}
+
+@include describe('[mixin] grid-column - Sets grid columns properties') {
+  @include it('Sets base columns properties when there is no `$columns` declared') {
+    @include assert {
+      @include output {
+        @include grid-column;
+      }
+
+      @include contains {
+        flex-grow: 0;
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  @include it('Sets columns properties based on a configuration') {
+    @include assert {
+      @include output {
+        @include grid-column((xs: 1));
+      }
+
+      @include contains {
+        padding-left: map-get($grid-gutter, xs) / 2;
+        padding-right: map-get($grid-gutter, xs) / 2;
+        width: 1 / map-get($grid-columns, default) * 100%;
+        max-width: 1 / map-get($grid-columns, default) * 100%;
+        flex-basis: 1 / map-get($grid-columns, default) * 100%;
+      }
+    }
+  }
+}
+
+@include describe('[mixin] grid-offset - Sets grid offset size') {
+  @include it('Sets `margin-left` property') {
+    @include assert {
+      @include output {
+        @include grid-offset((xs: 1));
+      }
+
+      @include expect {
+        margin-left: 1 / map-get($grid-columns, default) * 100%;
+      }
+    }
+  }
+}
