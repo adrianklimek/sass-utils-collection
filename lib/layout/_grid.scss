@@ -13,22 +13,26 @@ $grid-space-around: (
 
 $grid-columns: (
   default: 12,
-  xs: 12,
 ) !default;
 
-$grid-container-width: 1440px !default;
+$grid-container-width: (
+  xs: 1440px,
+) !default;
 
 @mixin grid-container {
   width: 100%;
-  max-width: $grid-container-width;
   margin: 0 auto;
+
+  @each $breakpoint-name, $space in $grid-container-width {
+    @include media-up($breakpoint-name) {
+      max-width: space;
+    }
+  }
 
   @each $breakpoint-name, $space in $grid-space-around {
     @include media-up($breakpoint-name) {
-      padding: {
-        left: $space;
-        right: $space;
-      }
+      padding-left: $space;
+      padding-right: $space;
     }
   }
 }
@@ -39,10 +43,8 @@ $grid-container-width: 1440px !default;
 
   @each $breakpoint-name, $gutter in $grid-gutter {
     @include media-up($breakpoint-name) {
-      margin: {
-        left: -$gutter / 2;
-        right: -$gutter / 2;
-      }
+      margin-left: -$gutter / 2;
+      margin-right: -$gutter / 2;
     }
   }
 }
@@ -67,18 +69,14 @@ $grid-container-width: 1440px !default;
   }
 }
 
-@mixin grid-column($columns) {
-  flex: {
-    grow: 0;
-    shrink: 0;
-  }
+@mixin grid-column($columns: ()) {
+  flex-grow: 0;
+  flex-shrink: 0;
 
   @each $breakpoint-name, $gutter in $grid-gutter {
     @include media-up($breakpoint-name) {
-      padding: {
-        left: $gutter / 2;
-        right: $gutter / 2;
-      }
+      padding-left: $gutter / 2;
+      padding-right: $gutter / 2;
     }
   }
 

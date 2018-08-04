@@ -1,4 +1,4 @@
-@mixin dynamic-shadow($offset-x, $offset-y, $blur-radius) {
+@mixin dynamic-shadow($offset-x, $offset-y, $blur-radius, $opacity: .75) {
   position: relative;
   z-index: 1;
 
@@ -12,7 +12,7 @@
     height: 100%;
 
     filter: blur($blur-radius);
-    opacity: .75;
+    opacity: $opacity;
 
     background: inherit;
     border-radius: inherit;

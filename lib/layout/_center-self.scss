@@ -1,9 +1,8 @@
 @mixin center-self($type: both, $position: absolute) {
-  position: $position;
-
   $x: $type == both or $type == horizontally;
   $y: $type == both or $type == vertically;
   
+  position: $position;
   top: if($y, 50%, null);
   left: if($x, 50%, null);
   transform: translate(if($x, -50%, 0), if($y, -50%, 0));

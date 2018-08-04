@@ -6,7 +6,7 @@ $media-breakpoints: (
   xl: 1440px,
 ) !default;
 
-@mixin media($breakpoint, $isMobileFirst: true) {
+@mixin media($breakpoint, $is-mobile-first: true) {
   @if not map-has-key($media-breakpoints, $breakpoint) {
     @error '[media]: #{$breakpoint} is not defined';
   }
@@ -14,7 +14,7 @@ $media-breakpoints: (
   $breakpoint-size: map-get($media-breakpoints, $breakpoint);
   @if ($breakpoint-size != 0) {
     $media: if(
-      $isMobileFirst, 
+      $is-mobile-first, 
       'min-width: #{$breakpoint-size}',
       'max-width: #{$breakpoint-size - 1}'
     );
