@@ -1,0 +1,39 @@
+{
+  "name": "sass-utils-collection",
+  "version": "0.1.0",
+  "description": "A collection of sass mixins and functions",
+  "main": "lib/index.scss",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adrianklimek/sass-utils-collection.git"
+  },
+  "keywords": [
+    "sass",
+    "utils",
+    "scss",
+    "mixins",
+    "helpers"
+  ],
+  "author": "Adrian Klimek",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adrianklimek/sass-utils-collection/issues"
+  },
+  "homepage": "https://github.com/adrianklimek/sass-utils-collection#readme",
+  "devDependencies": {
+    "glob": "^7.1.2",
+    "jest": "^23.4.2",
+    "node-sass": "^4.9.2",
+    "sass-true": "^4.0.0"
+  },
+  "jest": {
+    "verbose": true,
+    "testURL": "http://localhost/"
+  }
+}
