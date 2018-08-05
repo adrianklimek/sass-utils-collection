@@ -1,3 +1,5 @@
+/// Centers an element's content
+/// @param {string} $type [both] - one of: both, vertically, horizontally
 @mixin center-content($type: both) {
   display: flex;
   flex-direction: row;

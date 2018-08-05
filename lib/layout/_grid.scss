@@ -19,6 +19,7 @@ $grid-container-width: (
   xs: 1440px,
 ) !default;
 
+/// Creates a grid container
 @mixin grid-container {
   width: 100%;
   margin: 0 auto;
@@ -37,6 +38,7 @@ $grid-container-width: (
   }
 }
 
+/// Creates a grid row
 @mixin grid-row {
   display: flex;
   flex-wrap: wrap;
@@ -49,18 +51,27 @@ $grid-container-width: (
   }
 }
 
+/// Sets a grid column width properties
+/// @param {string} $width
 @mixin set-grid-column-width($width) {
   width: $width;
   max-width: $width;
   flex-basis: $width;
 }
 
+/// Sets a grid column width properties for nested column
+/// @param {number} $columns-count
+/// @param {number} $container-size - container size in columns
+/// @param {string} $breakpoint-name - one of breakpoint names declared in the media configuration
 @mixin set-nested-column-width($columns-count, $container-size, $breakpoint-name) {
   @include set-grid-column-width(
     grid-column-width($breakpoint-name, $columns-count) * (12 / $container-size)
   );
 }
 
+/// Gets a column width
+/// @param {string} $breakpoint-name - one of breakpoint names declared in the media configuration
+/// @param {number} $columns-count
 @function grid-column-width($breakpoint-name, $columns-count) {
   @if map-has-key($grid-columns, $breakpoint-name) {
     @return $columns-count / map-get($grid-columns, $breakpoint-name) * 100%;
@@ -69,6 +80,8 @@ $grid-container-width: (
   }
 }
 
+/// Creates a grid column
+/// @param {map} $columns [()] - columns map like: `(xs: 12, md: 6, xl: 4)`
 @mixin grid-column($columns: ()) {
   flex-grow: 0;
   flex-shrink: 0;
@@ -87,6 +100,8 @@ $grid-container-width: (
   }
 }
 
+/// Creates a grid column's offset
+/// @param {map} $columns [()] - columns map like: `(xs: 12, md: 6, xl: 4)`
 @mixin grid-offset($columns) {
   @each $breakpoint-name, $column-count in $columns {
     @include media-up($breakpoint-name) {

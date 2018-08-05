@@ -7,7 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "jest test.js"
+    "test": "jest test.js",
+    "build": "npm run test && node ./build.js"
   },
   "repository": {
     "type": "git",
@@ -30,7 +31,8 @@
     "glob": "^7.1.2",
     "jest": "^23.4.2",
     "node-sass": "^4.9.2",
-    "sass-true": "^4.0.0"
+    "sass-true": "^4.0.0",
+    "sassdoc": "^2.5.0"
   },
   "jest": {
     "verbose": true,

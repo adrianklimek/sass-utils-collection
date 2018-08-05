@@ -1,3 +1,4 @@
+/// Forces an element to self-clear its children
 @mixin clearfix {
   &::after {
     content: '';

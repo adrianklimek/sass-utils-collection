@@ -1,3 +1,5 @@
+/// Applies visually hidden utility (A11Y)
+/// @param {boolean} $is-focusable [false]
 @mixin hide-visually($is-focusable: false) {
   position: absolute !important;
   height: 1px;

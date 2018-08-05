@@ -1,3 +1,6 @@
+/// Centers an element
+/// @param {string} $type [both] - one of: both, horizontally, vertically
+/// @param {string} $position [absolute]
 @mixin center-self($type: both, $position: absolute) {
   $x: $type == both or $type == horizontally;
   $y: $type == both or $type == vertically;

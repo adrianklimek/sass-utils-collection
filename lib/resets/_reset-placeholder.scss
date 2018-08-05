@@ -1,3 +1,4 @@
+/// Resets a placeholder's default style
 @mixin reset-placeholder {
   &::placeholder {
     opacity: 1;

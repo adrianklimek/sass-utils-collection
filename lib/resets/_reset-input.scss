@@ -1,5 +1,7 @@
 @import '../misc/prefix';
 
+///  Resets an input's default styles
+/// @param {string} $type [text] - input's type, one of: text, number
 @mixin reset-input($type: text) {
   background: none {
     clip: content-box;

@@ -1,3 +1,8 @@
+/// Creates shadow based on an element's background
+/// @param {string} $offset-x
+/// @param {string} $offset-y
+/// @param {string} $blur-radius
+/// @param {number} $opacity [0.75]
 @mixin dynamic-shadow($offset-x, $offset-y, $blur-radius, $opacity: .75) {
   position: relative;
   z-index: 1;

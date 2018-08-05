@@ -1,3 +1,6 @@
+/// Sets width to height size ratio
+/// @param {number} $width [1]
+/// @param {number} $height [1]
 @mixin aspect-ratio($width: 1, $height: 1) {
   &::before,
   &::after {

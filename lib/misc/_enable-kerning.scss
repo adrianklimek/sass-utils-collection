@@ -1,3 +1,4 @@
+/// Enables font's kerning - improves spacing and fit of spe­cific pairs of let­ters
 @mixin enable-kerning {
   -moz-font-feature-settings: 'kern' 1;
   -ms-font-feature-settings: 'kern' 1;

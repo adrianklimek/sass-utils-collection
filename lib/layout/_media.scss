@@ -6,6 +6,9 @@ $media-breakpoints: (
   xl: 1440px,
 ) !default;
 
+/// Applies styles to given media query
+/// @param {string} $breakpoint - one of breakpoint names declared in the media configuration
+/// @param {boolean} $is-mobile-first [true]
 @mixin media($breakpoint, $is-mobile-first: true) {
   @if not map-has-key($media-breakpoints, $breakpoint) {
     @error '[media]: #{$breakpoint} is not defined';
@@ -27,12 +30,16 @@ $media-breakpoints: (
   }
 }
 
+/// Applies styles to screen resolutions equal or greater than given one
+/// @param {string} $breakpoint - one of breakpoint names declared in the media configuration
 @mixin media-up($breakpoint) {
   @include media($breakpoint) {
     @content;
   }
 }
 
+/// Applies styles to screen resolutions smaller than given one
+/// @param {string} $breakpoint - one of breakpoint names declared in the media configuration
 @mixin media-down($breakpoint) {
   @include media($breakpoint, false) {
     @content;

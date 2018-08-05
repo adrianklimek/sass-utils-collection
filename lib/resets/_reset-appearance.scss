@@ -1,5 +1,6 @@
 @import '../misc/prefix';
 
+/// Resets the appearance property
 @mixin reset-appearance {
   @include prefix(appearance, none, webkit, moz);
 }

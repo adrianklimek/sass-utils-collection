@@ -1,9 +1,11 @@
-@mixin sticky-footer($content-selector) {
+/// Makes an element stay always at the bottom
+/// @param {string} $footer-selector - selector like `.footer` or `&__footer`
+@mixin sticky-footer($footer-selector) {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 
-  #{$content-selector} {
+  #{$footer-selector} {
     flex: 1;
   }
 }

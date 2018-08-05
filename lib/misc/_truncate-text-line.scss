@@ -1,3 +1,5 @@
+/// Truncates text line
+/// @param {string} $width [null]
 @mixin truncate-text-line($width: null) {
   overflow: hidden;
   white-space: nowrap;
