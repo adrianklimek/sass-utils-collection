@@ -2,7 +2,7 @@
 @import '../center-content';
 
 @include describe('[mixin] center-content - Centers an element\'s content') {
-  @include it('Centers content vertically and horizontally by default') {
+  @include it('centers content vertically and horizontally by default') {
     @include assert {
       @include output {
         @include center-content;
@@ -17,7 +17,7 @@
     }
   }
 
-  @include it('Centers content vertically when `$type` is set to `vertically`') {
+  @include it('centers content vertically when `$type` is set to `vertically`') {
     @include assert {
       @include output {
         @include center-content(vertically);
@@ -31,7 +31,7 @@
     }
   }
 
-  @include it('Centers content horizontally when `$type` is set to `horizontally`') {
+  @include it('centers content horizontally when `$type` is set to `horizontally`') {
     @include assert {
       @include output {
         @include center-content(horizontally);

@@ -259,7 +259,7 @@
   ##### Parameters
   | name | type | default | description |
   | ---- | ---- | ------- | ----------- |
-  |footer-selector|string|-|selector like `.footer` or `&__footer`|
+  |content-selector|string|-|selector like `.content` or `&__content`|
 
   ### Resets
   #### reset-appearance

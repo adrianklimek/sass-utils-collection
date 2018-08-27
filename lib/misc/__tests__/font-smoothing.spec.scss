@@ -2,7 +2,7 @@
 @import '../font-smoothing';
 
 @include describe('[mixin] font-smoothing - Enables anti-aliasing effect') {
-  @include it('Sets the `font-smoothing` property for all available browsers') {
+  @include it('sets the `font-smoothing` property for all available browsers') {
     @include assert {
       @include output {
         @include font-smoothing;

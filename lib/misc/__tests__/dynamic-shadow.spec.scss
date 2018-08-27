@@ -2,7 +2,7 @@
 @import '../dynamic-shadow';
 
 @include describe('[mixin] dynamic-shadow - Creates shadow based on an element\'s background') {
-  @include it('Sets properties needed to apply a shadow effect') {
+  @include it('sets properties needed to apply a shadow effect') {
     @include assert {
       @include output {
         @include dynamic-shadow(0, 0, 20%);
@@ -25,7 +25,7 @@
     }
   }
 
-  @include it('Sets opacity to 0.75 by default') {
+  @include it('sets opacity to 0.75 by default') {
     @include assert {
       @include output {
         @include dynamic-shadow(0, 0, 20%);
@@ -39,7 +39,7 @@
     }
   }
 
-  @include it('Sets correct offset and blur radius') {
+  @include it('sets correct offset and blur radius') {
     @include assert {
       @include output {
         @include dynamic-shadow(20px, 12px, 20%);

@@ -2,7 +2,7 @@
 @import '../aspect-ratio';
 
 @include describe('[mixin] aspect-ratio - Sets width to height size ratio') {
-  @include it('Sets properties needed to apply a size ratio effect') {
+  @include it('sets properties needed to apply a size ratio effect') {
     @include assert {
       @include output {
         @include aspect-ratio;
@@ -26,7 +26,7 @@
     }
   }
 
-  @include it('Sets ratio to 1:1 when there are no arguments declared') {
+  @include it('sets ratio to 1:1 when there are no arguments declared') {
     @include assert {
       @include output {
         @include aspect-ratio;

@@ -2,7 +2,7 @@
 @import '../clearfix';
 
 @include describe('[mixin] clearfix - Forces an element to self-clear its children') {
-  @include it('Sets `display` to `table` and `clear` to `both` on an element\'s `after` pseudo-element') {
+  @include it('sets `display` to `table` and `clear` to `both` on an element\'s `after` pseudo-element') {
     @include assert {
       @include output {
         @include clearfix;

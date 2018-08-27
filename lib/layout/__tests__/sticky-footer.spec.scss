@@ -2,17 +2,17 @@
 @import '../sticky-footer';
 
 @include describe('[mixin] sticky-footer - Makes an element stay always at the bottom') {
-  @include it('Sets styles needed to achieve a sticky footer effect') {
+  @include it('sets styles needed to achieve a sticky footer effect') {
     @include assert {
       @include output {
-        @include sticky-footer('.footer');
+        @include sticky-footer('.content');
       }
 
       @include expect {
         display: flex;
         flex-direction: column;
         min-height: 100vh;
-        & .footer {
+        & .content {
           flex: 1;
         }
       }

@@ -2,7 +2,7 @@
 @import '../reset-appearance';
 
 @include describe('[mixin] reset-appearance - Resets the appearance property') {
-  @include it('Sets `appearance` to `none` with browsers prefixes') {
+  @include it('sets `appearance` to `none` with browsers prefixes') {
     @include assert {
       @include output {
         @include reset-appearance;

@@ -2,7 +2,7 @@
 @import '../reset-link';
 
 @include describe('[mixin] reset-link - Resets a link\'s default styles') {
-  @include it('Removes `text-decoration` and sets `color` to `inherit`') {
+  @include it('removes `text-decoration` and sets `color` to `inherit`') {
     @include assert {
       @include output {
         @include reset-link;

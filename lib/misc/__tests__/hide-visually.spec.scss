@@ -2,7 +2,7 @@
 @import '../hide-visually';
 
 @include describe('[mixin] hide-visually - Applies visually hidden utility (A11Y)') {
-  @include it('Sets properties needed to hide content on screens') {
+  @include it('sets properties needed to hide content on screens') {
     @include assert {
       @include output {
         @include hide-visually;
@@ -18,7 +18,7 @@
     }
   }
 
-  @include it('Enables focusable elements to be visible when they receive focus') {
+  @include it('enables focusable elements to be visible when they receive focus') {
     @include assert {
       @include output {
         @include hide-visually(true);
