@@ -1,7 +1,7 @@
 /// Applies prefixes to given property
 /// @param {string} $property
 /// @param {string} $value 
-/// @param {string} $prefixes... - any number of prefixes
+/// @param {string} $prefixes... - any number of arguments with prefixes
 @mixin prefix($property, $value, $prefixes...) {
   @each $prefix in $prefixes {
     -#{$prefix}-#{$property}: $value;

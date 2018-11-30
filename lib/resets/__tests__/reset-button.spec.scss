@@ -2,7 +2,7 @@
 @import '../reset-button';
 
 @include describe('[mixin] reset-button - Resets a button\'s default styles') {
-  @include it('removes `apperance`, `background`, `border`, `border-radius`, `outline`, `padding` and sets `color`, `font` to `inherit`') {
+  @include it('removes `appearance`, `background`, `border`, `border-radius`, `outline`, `padding` and sets `color`, `font` to `inherit`') {
     @include assert {
       @include output {
         @include reset-button;
@@ -19,6 +19,7 @@
         padding: 0;
         color: inherit;
         font: inherit;
+        cursor: pointer;
       }
     }
   }
