@@ -1,0 +1,52 @@
+@import '../../test';
+@import '../fill-space';
+
+@include describe('[mixin] fill-space - Fills the space of it\'s parent') {
+  @include it('sets size to 100% by default') {
+    @include assert {
+      @include output {
+        @include fill-space;
+      }
+
+      @include expect {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0%;
+        left: 0%;
+      }
+    }
+  }
+
+  @include it('centers content when `$size` is smaller than 100%') {
+    @include assert {
+      @include output {
+        @include fill-space(60%);
+      }
+
+      @include expect {
+        position: absolute;
+        width: 60%;
+        height: 60%;
+        top: 20%;
+        left: 20%;
+      }
+    }
+  }
+
+  @include it('centers content when `$size` is greater than 100%') {
+    @include assert {
+      @include output {
+        @include fill-space(200%);
+      }
+
+      @include expect {
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        top: -50%;
+        left: -50%;
+      }
+    }
+  }
+}
