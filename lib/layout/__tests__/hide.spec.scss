@@ -2,7 +2,7 @@
 @import '../hide';
 @import '../media';
 
-@include describe('[mixin] hide-up - Hides element') {
+@include describe('[mixin] hide-up') {
   @include it('hides element on a screen resolution equal or greater than given one') {
     @include assert {
       @include output {
@@ -18,7 +18,7 @@
   }
 }
 
-@include describe('[mixin] hide-down - Hides element') {
+@include describe('[mixin] hide-down') {
   @include it('hides element on a screen resolution smaller than given one') {
     @include assert {
       @include output {

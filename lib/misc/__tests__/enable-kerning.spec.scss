@@ -1,7 +1,7 @@
 @import '../../test';
 @import '../enable-kerning';
 
-@include describe('[mixin] enable-kerning - Enables font\'s kerning - improves spacing and fit of spe­cific pairs of let­ters') {
+@include describe('[mixin] enable-kerning') {
   @include it('sets `font-feature-settings` and `text-rendering` properties') {
     @include assert {
       @include output {

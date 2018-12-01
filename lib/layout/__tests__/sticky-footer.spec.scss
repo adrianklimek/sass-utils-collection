@@ -1,7 +1,7 @@
 @import '../../test';
 @import '../sticky-footer';
 
-@include describe('[mixin] sticky-footer - Makes an element stay always at the bottom') {
+@include describe('[mixin] sticky-footer') {
   @include it('sets styles needed to achieve a sticky footer effect') {
     @include assert {
       @include output {

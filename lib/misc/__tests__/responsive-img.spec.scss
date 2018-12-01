@@ -1,7 +1,7 @@
 @import '../../test';
 @import '../responsive-img';
 
-@include describe('[mixin] responsive-img - Makes an image responsive') {
+@include describe('[mixin] responsive-img') {
   @include it('sets `display` to `block` and `max-width` to `100%`') {
     @include assert {
       @include output {

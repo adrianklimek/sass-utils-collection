@@ -2,7 +2,7 @@
 @import '../grid';
 @import '../media';
 
-@include describe('[mixin] grid-container - Creates grid container') {
+@include describe('[mixin] grid-container') {
   @include it('sets styles needed to create a container based on a configuration') {
     @include assert {
       @include output {
@@ -20,7 +20,7 @@
   }
 }
 
-@include describe('[mixin] grid-row - Creates grid row') {
+@include describe('[mixin] grid-row') {
   @include it('sets styles needed to create a row based on a configuration') {
     @include assert {
       @include output {
@@ -37,7 +37,7 @@
   }
 }
 
-@include describe('[mixin] set-grid-column-width - Sets grid column width properties') {
+@include describe('[mixin] set-grid-column-width') {
   @include it('sets width properties needed for cross browser support') {
     @include assert {
       @include output {
@@ -53,7 +53,7 @@
   }
 }
 
-@include describe('[mixin] set-nested-column-width - Sets grid column width properties for nested column') {
+@include describe('[mixin] set-nested-column-width') {
   @include it('sets width properties needed for cross browser support') {
     @include assert {
       @include output {
@@ -69,13 +69,13 @@
   }
 }
 
-@include describe('[function] grid-column-width - Gets column width based on given parameters') {
+@include describe('[function] grid-column-width') {
   @include it('gets column width based on given parameters') {
     @include assert-equal(grid-column-width(md, 4), 4 / map-get($grid-columns, default) * 100%)
   }
 }
 
-@include describe('[mixin] grid-column - Sets grid columns properties') {
+@include describe('[mixin] grid-column') {
   @include it('sets base columns properties when there is no `$columns` declared') {
     @include assert {
       @include output {
@@ -106,7 +106,7 @@
   }
 }
 
-@include describe('[mixin] grid-offset - Sets grid offset size') {
+@include describe('[mixin] grid-offset') {
   @include it('sets `margin-left` property') {
     @include assert {
       @include output {

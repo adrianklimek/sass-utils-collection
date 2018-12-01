@@ -1,7 +1,7 @@
 @import '../../test';
 @import '../hide-visually';
 
-@include describe('[mixin] hide-visually - Applies visually hidden utility (A11Y)') {
+@include describe('[mixin] hide-visually') {
   @include it('sets properties needed to hide content on screens') {
     @include assert {
       @include output {

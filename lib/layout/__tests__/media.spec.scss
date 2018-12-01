@@ -1,7 +1,7 @@
 @import '../../test';
 @import '../media';
 
-@include describe('[mixin] media - Applies styles to given media query') {
+@include describe('[mixin] media') {
   @include it('applies styles to screen resolutions equal or greater than given one by default') {
     @include assert {
       @include output {
@@ -19,7 +19,7 @@
   }
 }
 
-@include describe('[mixin] media-up - Applies styles to given media query') {
+@include describe('[mixin] media-up') {
   @include it('applies styles to screen resolutions equal or greater than given one') {
     @include assert {
       @include output {
@@ -37,7 +37,7 @@
   }
 }
 
-@include describe('[mixin] media-down - Applies styles to given media query') {
+@include describe('[mixin] media-down') {
   @include it('applies styles to screen resolutions smaller than given one') {
     @include assert {
       @include output {

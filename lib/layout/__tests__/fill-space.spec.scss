@@ -1,7 +1,7 @@
 @import '../../test';
 @import '../fill-space';
 
-@include describe('[mixin] fill-space - Fills the space of it\'s parent') {
+@include describe('[mixin] fill-space') {
   @include it('sets size to 100% by default') {
     @include assert {
       @include output {

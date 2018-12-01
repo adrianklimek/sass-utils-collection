@@ -1,7 +1,7 @@
 @import '../../test';
 @import '../prefix';
 
-@include describe('[mixin] prefix - Applies prefixes to given property') {
+@include describe('[mixin] prefix') {
   @include it('sets value to a property when there are no prefixes declared') {
     @include assert {
       @include output {

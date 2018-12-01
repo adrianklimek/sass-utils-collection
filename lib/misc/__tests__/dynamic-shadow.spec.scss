@@ -1,7 +1,7 @@
 @import '../../test';
 @import '../dynamic-shadow';
 
-@include describe('[mixin] dynamic-shadow - Creates shadow based on an element\'s background') {
+@include describe('[mixin] dynamic-shadow') {
   @include it('sets properties needed to apply a shadow effect') {
     @include assert {
       @include output {

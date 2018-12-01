@@ -1,7 +1,7 @@
 @import '../../test';
 @import '../center-content';
 
-@include describe('[mixin] center-content - Centers an element\'s content') {
+@include describe('[mixin] center-content') {
   @include it('centers content vertically and horizontally by default') {
     @include assert {
       @include output {
