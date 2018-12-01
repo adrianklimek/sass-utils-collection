@@ -39,4 +39,24 @@
       }
     }
   }
+
+  @include it('keeps ratio when `$force-ratio` is set to true') {
+    @include assert {
+      @include output {
+        @include aspect-ratio(1, 1, true)
+      }
+
+      @include contains {
+        & {
+          position: relative;
+        }
+
+        &::before{
+          content: '';
+          display: block;
+          padding-top: 100%;
+        }
+      }
+    }
+  }
 }

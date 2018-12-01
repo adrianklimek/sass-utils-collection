@@ -1,19 +1,32 @@
 /// Sets width to height size ratio
 /// @param {number} $width [1]
 /// @param {number} $height [1]
-@mixin aspect-ratio($width: 1, $height: 1) {
-  &::before,
-  &::after {
-    content: '';
-  }
+/// @param {boolean} $force-ratio – forces to keep ratio when its content is bigger, it also requires content to be absolute
+@mixin aspect-ratio($width: 1, $height: 1, $force-ratio: false) {
+  @if $force-ratio {
+    & {
+      position: relative;
+    }
 
-  &::before {
-    padding-top: $height / $width * 100%;
-    float: left;
-  }
+    &::before{
+      content: '';
+      display: block;
+      padding-top: $height / $width * 100%;
+    }
+  } @else {
+    &::before,
+    &::after {
+      content: '';
+    }
 
-  &::after {
-    display: block;
-    clear: both;
+    &::before {
+      padding-top: $height / $width * 100%;
+      float: left;
+    }
+
+    &::after {
+      display: block;
+      clear: both;
+    }
   }
 }
