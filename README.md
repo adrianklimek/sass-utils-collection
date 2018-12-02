@@ -12,19 +12,20 @@
      1. [Layout](#layout) 
         1. [center-content](#center-content)
         2. [center-self](#center-self)
-        3. [grid-container](#grid-container)
-        4. [grid-row](#grid-row)
-        5. [set-grid-column-width](#set-grid-column-width)
-        6. [set-nested-column-width](#set-nested-column-width)
-        7. [grid-column-width](#grid-column-width)
-        8. [grid-column](#grid-column)
-        9. [grid-offset](#grid-offset)
-        10. [hide-up](#hide-up)
-        11. [hide-down](#hide-down)
-        12. [media](#media)
-        13. [media-up](#media-up)
-        14. [media-down](#media-down)
-        15. [sticky-footer](#sticky-footer)
+        3. [fill-space](#fill-space)
+        4. [grid-container](#grid-container)
+        5. [grid-row](#grid-row)
+        6. [set-grid-column-width](#set-grid-column-width)
+        7. [set-nested-column-width](#set-nested-column-width)
+        8. [grid-column-width](#grid-column-width)
+        9. [grid-column](#grid-column)
+        10. [grid-offset](#grid-offset)
+        11. [hide-up](#hide-up)
+        12. [hide-down](#hide-down)
+        13. [media](#media)
+        14. [media-up](#media-up)
+        15. [media-down](#media-down)
+        16. [sticky-footer](#sticky-footer)
      2. [Resets](#resets)
         1. [reset-appearance](#reset-appearance)
         2. [reset-button](#reset-button)
@@ -133,6 +134,17 @@
   | name | type | default | description |
   | ---- | ---- | ------- | ----------- |
   |type|string|both|one of: both, horizontally, vertically|
+  |position|string|absolute|-|
+  
+  #### fill-space
+  *type: mixin*
+  
+  Fills the space of it's parent 
+  
+  ##### Parameters
+  | name | type | default | description |
+  | ---- | ---- | ------- | ----------- |
+  |size|string|100%|– when it is smaller or greater than 100% content will be also centered|
   |position|string|absolute|-|
   
   #### grid-container
@@ -255,6 +267,7 @@
   *type: mixin*
   
   Makes an element stay always at the bottom
+  Note: for cross-browser support additional code is needed: https://github.com/philipwalton/solved-by-flexbox/blob/master/assets/css/components/site.css
   
   ##### Parameters
   | name | type | default | description |
@@ -273,6 +286,10 @@
   
   Resets a button's default styles
   
+  ##### Parameters
+  | name | type | default | description |
+  | ---- | ---- | ------- | ----------- |
+  |cursor|string|pointer|-|
   
   #### reset-input
   *type: mixin*
@@ -312,6 +329,7 @@
   | ---- | ---- | ------- | ----------- |
   |width|number|1|-|
   |height|number|1|-|
+  |force-ratio|boolean|-|– forces to keep ratio when its content is bigger, it also requires content to be absolute|
   
   #### clearfix
   *type: mixin*
@@ -335,7 +353,7 @@
   #### enable-kerning
   *type: mixin*
   
-  Enables font's kerning - improves spacing and fit of spe­cific pairs of let­ters
+  Enables font's kerning – improves spacing and fit of spe­cific pairs of let­ters
   
   
   #### font-smoothing
@@ -364,7 +382,7 @@
   | ---- | ---- | ------- | ----------- |
   |property|string|-|-|
   |value|string|-|-|
-  |prefixes...|string|-|any number of prefixes|
+  |prefixes...|string|-|any number of arguments with prefixes|
   
   #### random-color
   *type: function*
