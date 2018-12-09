@@ -1,6 +1,6 @@
 {
   "name": "sass-utils-collection",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A collection of sass mixins and functions",
   "main": "lib/index.scss",
   "directories": {
