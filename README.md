@@ -242,6 +242,7 @@
   | ---- | ---- | ------- | ----------- |
   |breakpoint|string|-|one of breakpoint names declared in the media configuration|
   |is-mobile-first|boolean|true|-|
+  |width|string|null|custom width can be used instead of breakpoint name|
   
   #### media-up
   *type: mixin*
@@ -252,6 +253,7 @@
   | name | type | default | description |
   | ---- | ---- | ------- | ----------- |
   |breakpoint|string|-|one of breakpoint names declared in the media configuration|
+  |width|string|null|custom width can be used instead of breakpoint name|
   
   #### media-down
   *type: mixin*
@@ -262,6 +264,7 @@
   | name | type | default | description |
   | ---- | ---- | ------- | ----------- |
   |breakpoint|string|-|one of breakpoint names declared in the media configuration|
+  |width|string|null|custom width can be used instead of breakpoint name|
   
   #### sticky-footer
   *type: mixin*
