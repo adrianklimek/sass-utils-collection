@@ -12,7 +12,7 @@
 
       @include expect {
         @media (min-width: map-get($media-breakpoints, md)) {
-          background: red
+          background: red;
         }
       }
     }
@@ -30,7 +30,23 @@
 
       @include expect {
         @media (min-width: map-get($media-breakpoints, md)) {
-          background: red
+          background: red;
+        }
+      }
+    }
+  }
+
+  @include it('applies styles to screen resolutions equal or greater than given width') {
+    @include assert {
+      @include output {
+        @include media-up($width: 600px) {
+          background: red;
+        };
+      }
+
+      @include expect {
+        @media (min-width: 600px) {
+          background: red;
         }
       }
     }
@@ -48,7 +64,23 @@
 
       @include expect {
         @media (max-width: map-get($media-breakpoints, md) - 1) {
-          background: red
+          background: red;
+        }
+      }
+    }
+  }
+
+  @include it('applies styles to screen resolutions smaller than given width') {
+    @include assert {
+      @include output {
+        @include media-down($width: 600px) {
+          background: red;
+        };
+      }
+
+      @include expect {
+        @media (max-width: 600px - 1) {
+          background: red;
         }
       }
     }
