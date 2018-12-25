@@ -7,17 +7,17 @@ $media-breakpoints: (
 ) !default;
 
 /// Applies styles to given media query
-/// @param {string} $breakpoint - one of breakpoint names declared in the media configuration
+/// @param {string} $breakpoint [null] - one of breakpoint names declared in the media configuration
 /// @param {boolean} $is-mobile-first [true]
 /// @param {string} $width [null] - custom width can be used instead of breakpoint name
 @mixin media($breakpoint: null, $is-mobile-first: true, $width: null) {
   @if $width {
     $media: if(
-      $is-mobile-first, 
+      $is-mobile-first,
       'min-width: #{$width}',
       'max-width: #{$width - 1}'
     );
-    
+
     @media (#{$media}) {
       @content;
     }
@@ -25,15 +25,15 @@ $media-breakpoints: (
     @if not map-has-key($media-breakpoints, $breakpoint) {
       @error '[media]: #{$breakpoint} is not defined';
     }
-    
+
     $breakpoint-size: map-get($media-breakpoints, $breakpoint);
     @if ($breakpoint-size != 0) {
       $media: if(
-        $is-mobile-first, 
+        $is-mobile-first,
         'min-width: #{$breakpoint-size}',
         'max-width: #{$breakpoint-size - 1}'
       );
-      
+
       @media (#{$media}) {
         @content;
       }
@@ -44,7 +44,7 @@ $media-breakpoints: (
 }
 
 /// Applies styles to screen resolutions equal or greater than given one
-/// @param {string} $breakpoint - one of breakpoint names declared in the media configuration
+/// @param {string} $breakpoint [null] - one of breakpoint names declared in the media configuration
 /// @param {string} $width [null] - custom width can be used instead of breakpoint name
 @mixin media-up($breakpoint: null, $width: null) {
   @include media($breakpoint, true, $width) {
@@ -53,7 +53,7 @@ $media-breakpoints: (
 }
 
 /// Applies styles to screen resolutions smaller than given one
-/// @param {string} $breakpoint - one of breakpoint names declared in the media configuration
+/// @param {string} $breakpoint [null] - one of breakpoint names declared in the media configuration
 /// @param {string} $width [null] - custom width can be used instead of breakpoint name
 @mixin media-down($breakpoint: null, $width: null) {
   @include media($breakpoint, false, $width) {
