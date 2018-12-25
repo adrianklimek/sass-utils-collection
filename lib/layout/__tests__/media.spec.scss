@@ -2,7 +2,7 @@
 @import '../media';
 
 @include describe('[mixin] media') {
-  @include it('applies styles to screen resolutions equal or greater than given one by default') {
+  @include it('applies styles to screen resolutions equal or greater than given breakpoint by default') {
     @include assert {
       @include output {
         @include media(md) {
@@ -20,7 +20,7 @@
 }
 
 @include describe('[mixin] media-up') {
-  @include it('applies styles to screen resolutions equal or greater than given one') {
+  @include it('applies styles to screen resolutions equal or greater than given breakpoint') {
     @include assert {
       @include output {
         @include media-up(md) {
@@ -54,7 +54,7 @@
 }
 
 @include describe('[mixin] media-down') {
-  @include it('applies styles to screen resolutions smaller than given one') {
+  @include it('applies styles to screen resolutions smaller than given breakpoint') {
     @include assert {
       @include output {
         @include media-down(md) {
