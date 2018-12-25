@@ -220,7 +220,8 @@
   ##### Parameters
   | name | type | default | description |
   | ---- | ---- | ------- | ----------- |
-  |breakpoint-name|string|-|one of breakpoint names declared in the media configuration|
+  |breakpoint-name|string|null|one of breakpoint names declared in the media configuration|
+  |width|string|null|custom width can be used instead of breakpoint name|
   
   #### hide-down
   *type: mixin*
@@ -230,7 +231,8 @@
   ##### Parameters
   | name | type | default | description |
   | ---- | ---- | ------- | ----------- |
-  |breakpoint-name|string|-|one of breakpoint names declared in the media configuration|
+  |breakpoint-name|string|null|one of breakpoint names declared in the media configuration|
+  |width|string|null|custom width can be used instead of breakpoint name|
   
   #### media
   *type: mixin*
@@ -240,7 +242,7 @@
   ##### Parameters
   | name | type | default | description |
   | ---- | ---- | ------- | ----------- |
-  |breakpoint|string|-|one of breakpoint names declared in the media configuration|
+  |breakpoint|string|null|one of breakpoint names declared in the media configuration|
   |is-mobile-first|boolean|true|-|
   |width|string|null|custom width can be used instead of breakpoint name|
   
@@ -252,7 +254,7 @@
   ##### Parameters
   | name | type | default | description |
   | ---- | ---- | ------- | ----------- |
-  |breakpoint|string|-|one of breakpoint names declared in the media configuration|
+  |breakpoint|string|null|one of breakpoint names declared in the media configuration|
   |width|string|null|custom width can be used instead of breakpoint name|
   
   #### media-down
@@ -263,7 +265,7 @@
   ##### Parameters
   | name | type | default | description |
   | ---- | ---- | ------- | ----------- |
-  |breakpoint|string|-|one of breakpoint names declared in the media configuration|
+  |breakpoint|string|null|one of breakpoint names declared in the media configuration|
   |width|string|null|custom width can be used instead of breakpoint name|
   
   #### sticky-footer

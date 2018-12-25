@@ -3,7 +3,7 @@
 @import '../media';
 
 @include describe('[mixin] hide-up') {
-  @include it('hides element on a screen resolution equal or greater than given one') {
+  @include it('hides element on a screen resolution equal or greater than given breakpoint') {
     @include assert {
       @include output {
         @include hide-up(md);
@@ -16,10 +16,24 @@
       }
     }
   }
+
+  @include it('hides element on a screen resolution equal or greater than given width') {
+    @include assert {
+      @include output {
+        @include hide-up($width: 600px);
+      }
+
+      @include expect {
+        @media (min-width: 600px) {
+          display: none;
+        }
+      }
+    }
+  }
 }
 
 @include describe('[mixin] hide-down') {
-  @include it('hides element on a screen resolution smaller than given one') {
+  @include it('hides element on a screen resolution smaller than given breakpoint') {
     @include assert {
       @include output {
         @include hide-down(lg);
@@ -27,6 +41,20 @@
 
       @include expect {
         @media (max-width: map-get($media-breakpoints, lg) - 1) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @include it('hides element on a screen resolution smaller than given width') {
+    @include assert {
+      @include output {
+        @include hide-down($width: 600px);
+      }
+
+      @include expect {
+        @media (max-width: 600px - 1) {
           display: none;
         }
       }
