@@ -11,7 +11,7 @@
       @include contains {
         background: none;
         background-clip: content-box;
-        border: none;
+        border: 0;
         border-radius: 0;
         padding: 0;
         outline: none;
@@ -29,7 +29,6 @@
       @include contains {
         -webkit-appearance: textfield;
         -moz-appearance: textfield;
-        appearance: textfield;
         &::-webkit-inner-spin-button,
         &::-webkit-outer-spin-button {
           -webkit-appearance: none;

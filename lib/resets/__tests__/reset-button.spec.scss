@@ -2,7 +2,7 @@
 @import '../reset-button';
 
 @include describe('[mixin] reset-button') {
-  @include it('removes `appearance`, `background`, `border`, `border-radius`, `outline`, `padding` and sets `color`, `font` to `inherit`') {
+  @include it('removes `background`, `border`, `border-radius`, `outline`, `padding` and sets `color`, `font` to `inherit`') {
     @include assert {
       @include output {
         @include reset-button;
@@ -10,7 +10,7 @@
 
       @include expect {
         background: none;
-        border: none;
+        border: 0;
         border-radius: 0;
         outline: none;
         padding: 0;

@@ -3,13 +3,11 @@
 ///  Resets an input's default styles
 /// @param {string} $type [text] - input's type, one of: text, number
 @mixin reset-input($type: text) {
-  background: none {
-    clip: content-box;
-  }
+  background: none;
+  background-clip: content-box;
 
-  border: none {
-    radius: 0;
-  }
+  border: 0;
+  border-radius: 0;
 
   padding: 0;
   outline: none;
@@ -17,7 +15,8 @@
   box-shadow: none;
 
   @if $type == 'number' {
-    @include prefix(appearance, textfield, webkit, moz);
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
 
     &::-webkit-inner-spin-button,
     &::-webkit-outer-spin-button {

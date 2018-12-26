@@ -10,6 +10,7 @@
     "test": "jest test.js",
     "prebuild": "npm run test",
     "build": "node ./build.js",
+    "lint": "stylelint 'lib/**/*.scss'",
     "prepublishOnly": "npm run build"
   },
   "repository": {
@@ -34,7 +35,10 @@
     "jest": "^23.4.2",
     "node-sass": "^4.9.2",
     "sass-true": "^4.0.0",
-    "sassdoc": "^2.5.0"
+    "sassdoc": "^2.5.0",
+    "stylelint": "^9.9.0",
+    "stylelint-config-sass-guidelines": "^5.3.0",
+    "stylelint-scss": "^3.4.3"
   },
   "jest": {
     "verbose": true,

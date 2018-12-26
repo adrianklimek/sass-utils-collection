@@ -5,9 +5,8 @@
 @mixin reset-button($cursor: pointer) {
   background: none;
 
-  border: none {
-    radius: 0;
-  }
+  border: 0;
+  border-radius: 0;
   outline: none;
   padding: 0;
 

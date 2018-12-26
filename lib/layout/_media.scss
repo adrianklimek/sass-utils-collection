@@ -12,11 +12,9 @@ $media-breakpoints: (
 /// @param {string} $width [null] - custom width can be used instead of breakpoint name
 @mixin media($breakpoint: null, $is-mobile-first: true, $width: null) {
   @if $width {
-    $media: if(
-      $is-mobile-first,
-      'min-width: #{$width}',
-      'max-width: #{$width - 1}'
-    );
+    $media: if($is-mobile-first,
+    'min-width: #{$width}',
+    'max-width: #{$width - 1}');
 
     @media (#{$media}) {
       @content;
@@ -28,11 +26,9 @@ $media-breakpoints: (
 
     $breakpoint-size: map-get($media-breakpoints, $breakpoint);
     @if ($breakpoint-size != 0) {
-      $media: if(
-        $is-mobile-first,
-        'min-width: #{$breakpoint-size}',
-        'max-width: #{$breakpoint-size - 1}'
-      );
+      $media: if($is-mobile-first,
+      'min-width: #{$breakpoint-size}',
+      'max-width: #{$breakpoint-size - 1}');
 
       @media (#{$media}) {
         @content;

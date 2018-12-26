@@ -1,5 +1,5 @@
 /// Generates random rgba color
 /// @param {number} $alpha [1]
 @function random-color($alpha: 1) {
-  @return rgba(random(256), random(256), random(256), $alpha)
+  @return rgba(random(256), random(256), random(256), $alpha);
 }

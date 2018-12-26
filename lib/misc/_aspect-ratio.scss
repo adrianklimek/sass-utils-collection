@@ -4,11 +4,9 @@
 /// @param {boolean} $force-ratio – forces to keep ratio when its content is bigger, it also requires content to be absolute
 @mixin aspect-ratio($width: 1, $height: 1, $force-ratio: false) {
   @if $force-ratio {
-    & {
-      position: relative;
-    }
+    position: relative;
 
-    &::before{
+    &::before {
       content: '';
       display: block;
       padding-top: $height / $width * 100%;
