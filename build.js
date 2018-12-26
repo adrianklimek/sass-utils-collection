@@ -21,7 +21,7 @@ const createParamsTable = (content = []) => {
 }
 
 const createList = items => {
-  const createEntryDetails = item => 
+  const createEntryDetails = item =>
     `#### ${ item.name }\n*type: ${ item.type }*\n\n${ item.description }\n`
 
   return items
@@ -51,7 +51,7 @@ const createDocs = ({ layout, resets, misc }) => (
   1. [Installation](#installation)
   2. [Usage](#usage)
   3. [Configuration](#configuration)
-     1. [Media](#media)
+     1. [Media](#configuration-media)
      2. [Grid](#grid)
   4. [Utils](#utils)
      1. [Layout](#layout) 
@@ -88,7 +88,7 @@ const createDocs = ({ layout, resets, misc }) => (
   \`\`\`
 
   ## Configuration
-  ### Media
+  ### Media {#configuration-media}
   Breakpoints values as well as breakpoint names can be overwritten 
   but has to correspond to breakpoint names in the grid configuration.
   ##### Default
@@ -148,13 +148,13 @@ const build = async (path) => {
   const resets = await sassdoc.parse('./lib/resets')
   const misc = await sassdoc.parse('./lib/misc')
 
-  fs.writeFile(path, createDocs({ 
-    layout: layout.map(createDocData), 
-    resets: resets.map(createDocData), 
-    misc: misc.map(createDocData), 
+  fs.writeFile(path, createDocs({
+    layout: layout.map(createDocData),
+    resets: resets.map(createDocData),
+    misc: misc.map(createDocData),
   }), err => {
     if (err) throw err
-  })  
+  })
 }
 
 build('./README.md')

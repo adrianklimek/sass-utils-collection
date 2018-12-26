@@ -6,7 +6,7 @@
   1. [Installation](#installation)
   2. [Usage](#usage)
   3. [Configuration](#configuration)
-     1. [Media](#media)
+     1. [Media](#configuration-media)
      2. [Grid](#grid)
   4. [Utils](#utils)
      1. [Layout](#layout) 
@@ -72,7 +72,7 @@
   ```
 
   ## Configuration
-  ### Media
+  ### Media {#configuration-media}
   Breakpoints values as well as breakpoint names can be overwritten 
   but has to correspond to breakpoint names in the grid configuration.
   ##### Default
