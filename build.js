@@ -51,7 +51,7 @@ const createDocs = ({ layout, resets, misc }) => (
   1. [Installation](#installation)
   2. [Usage](#usage)
   3. [Configuration](#configuration)
-     1. [Media](#configuration-media)
+     1. [Media breakpoints](#media-breakpoints)
      2. [Grid](#grid)
   4. [Utils](#utils)
      1. [Layout](#layout) 
@@ -88,7 +88,7 @@ const createDocs = ({ layout, resets, misc }) => (
   \`\`\`
 
   ## Configuration
-  ### Media {#configuration-media}
+  ### Media breakpoints
   Breakpoints values as well as breakpoint names can be overwritten 
   but has to correspond to breakpoint names in the grid configuration.
   ##### Default

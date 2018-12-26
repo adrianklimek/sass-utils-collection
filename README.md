@@ -6,7 +6,7 @@
   1. [Installation](#installation)
   2. [Usage](#usage)
   3. [Configuration](#configuration)
-     1. [Media](#configuration-media)
+     1. [Media breakpoints](#media-breakpoints)
      2. [Grid](#grid)
   4. [Utils](#utils)
      1. [Layout](#layout) 
@@ -72,7 +72,7 @@
   ```
 
   ## Configuration
-  ### Media {#configuration-media}
+  ### Media breakpoints
   Breakpoints values as well as breakpoint names can be overwritten 
   but has to correspond to breakpoint names in the grid configuration.
   ##### Default
@@ -370,7 +370,7 @@
   #### hide-visually
   *type: mixin*
   
-  Applies visually hidden utility (A11Y)
+  Applies visually hidden utility ([A11Y](https://a11yproject.com/posts/how-to-hide-content/))
   
   ##### Parameters
   | name | type | default | description |
