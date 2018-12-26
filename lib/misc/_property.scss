@@ -1,0 +1,8 @@
+/// Applies the same value to multiple properties
+/// @param {string} $value
+/// @param {string) $properties - any number of arguments with properties
+@mixin property($value, $properties...) {
+  @each $property in $properties {
+    #{$property}: $value;
+  }
+}

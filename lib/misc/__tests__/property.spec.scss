@@ -1,0 +1,17 @@
+@import '../../test';
+@import '../property';
+
+@include describe('[mixin] property') {
+  @include it('sets value to multiple properties') {
+    @include assert {
+      @include output {
+        @include property(inherit, background, color);
+      }
+
+      @include expect {
+        background: inherit;
+        color: inherit;
+      }
+    }
+  }
+}

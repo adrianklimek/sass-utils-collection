@@ -41,9 +41,10 @@
         5. [font-smoothing](#font-smoothing)
         6. [hide-visually](#hide-visually)
         7. [prefix](#prefix)
-        8. [random-color](#random-color)
-        9. [responsive-img](#responsive-img)
-        10. [truncate-text-line](#truncate-text-line)
+        8. [property](#property)
+        9. [random-color](#random-color)
+        10. [responsive-img](#responsive-img)
+        11. [truncate-text-line](#truncate-text-line)
   5. [License](#license)
 
   ## Installation
@@ -388,6 +389,17 @@
   |property|string|-|-|
   |value|string|-|-|
   |prefixes...|string|-|any number of arguments with prefixes|
+  
+  #### property
+  *type: mixin*
+  
+  Applies the same value to multiple properties
+  
+  ##### Parameters
+  | name | type | default | description |
+  | ---- | ---- | ------- | ----------- |
+  |value|string|-|-|
+  |{string)|undefined|-|$properties - any number of arguments with properties|
   
   #### random-color
   *type: function*
