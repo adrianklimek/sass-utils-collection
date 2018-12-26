@@ -1,5 +1,5 @@
-/// Fills the space of it's parent 
-/// @param {string} $size [100%] – when it is smaller or greater than 100% content will be also centered
+/// Fills the space of it's parent
+/// @param {string} $size [100%] - when it is smaller or greater than 100% content will be also centered
 /// @param {string} $position [absolute]
 @mixin fill-space($size: 100%, $position: absolute) {
   position: $position;

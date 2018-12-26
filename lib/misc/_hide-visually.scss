@@ -1,4 +1,4 @@
-/// Applies visually hidden utility ([A11Y](https://a11yproject.com/posts/how-to-hide-content/))
+/// Applies visually hidden utility — https://a11yproject.com/posts/how-to-hide-content/
 /// @param {boolean} $is-focusable [false]
 @mixin hide-visually($is-focusable: false) {
   position: absolute !important;

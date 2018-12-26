@@ -13,11 +13,11 @@
         1. [center-content](#center-content)
         2. [center-self](#center-self)
         3. [fill-space](#fill-space)
-        4. [grid-container](#grid-container)
-        5. [grid-row](#grid-row)
-        6. [set-grid-column-width](#set-grid-column-width)
-        7. [set-nested-column-width](#set-nested-column-width)
-        8. [grid-column-width](#grid-column-width)
+        4. [grid-column-width](#grid-column-width)
+        5. [grid-container](#grid-container)
+        6. [grid-row](#grid-row)
+        7. [set-grid-column-width](#set-grid-column-width)
+        8. [set-nested-column-width](#set-nested-column-width)
         9. [grid-column](#grid-column)
         10. [grid-offset](#grid-offset)
         11. [hide-up](#hide-up)
@@ -139,13 +139,24 @@
   #### fill-space
   *type: mixin*
   
-  Fills the space of it's parent 
+  Fills the space of it's parent
   
   ##### Parameters
   | name | type | default | description |
   | ---- | ---- | ------- | ----------- |
-  |size|string|100%|– when it is smaller or greater than 100% content will be also centered|
+  |size|string|100%|when it is smaller or greater than 100% content will be also centered|
   |position|string|absolute|-|
+  
+  #### grid-column-width
+  *type: function*
+  
+  Gets a column width
+  
+  ##### Parameters
+  | name | type | default | description |
+  | ---- | ---- | ------- | ----------- |
+  |breakpoint-name|string|-|one of breakpoint names declared in the media configuration|
+  |columns-count|number|-|-|
   
   #### grid-container
   *type: mixin*
@@ -180,17 +191,6 @@
   |columns-count|number|-|-|
   |container-size|number|-|container size in columns|
   |breakpoint-name|string|-|one of breakpoint names declared in the media configuration|
-  
-  #### grid-column-width
-  *type: function*
-  
-  Gets a column width
-  
-  ##### Parameters
-  | name | type | default | description |
-  | ---- | ---- | ------- | ----------- |
-  |breakpoint-name|string|-|one of breakpoint names declared in the media configuration|
-  |columns-count|number|-|-|
   
   #### grid-column
   *type: mixin*
@@ -370,7 +370,7 @@
   #### hide-visually
   *type: mixin*
   
-  Applies visually hidden utility ([A11Y](https://a11yproject.com/posts/how-to-hide-content/))
+  Applies visually hidden utility — https://a11yproject.com/posts/how-to-hide-content/
   
   ##### Parameters
   | name | type | default | description |
