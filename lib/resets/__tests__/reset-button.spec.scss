@@ -9,9 +9,6 @@
       }
 
       @include expect {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
         background: none;
         border: none;
         border-radius: 0;

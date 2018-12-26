@@ -3,10 +3,8 @@
 /// Resets a button's default styles
 /// @param {string} $cursor [pointer]
 @mixin reset-button($cursor: pointer) {
-  @include reset-appearance;
-  
   background: none;
-  
+
   border: none {
     radius: 0;
   }
