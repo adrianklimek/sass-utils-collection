@@ -399,7 +399,7 @@
   | name | type | default | description |
   | ---- | ---- | ------- | ----------- |
   |value|string|-|-|
-  |{string)|undefined|-|$properties - any number of arguments with properties|
+  |properties...|string|-|any number of arguments with properties|
   
   #### random-color
   *type: function*
