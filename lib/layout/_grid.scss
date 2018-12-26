@@ -19,6 +19,18 @@ $grid-container-width: (
   xs: 1440px,
 ) !default;
 
+
+/// Gets a column width
+/// @param {string} $breakpoint-name - one of breakpoint names declared in the media configuration
+/// @param {number} $columns-count
+@function grid-column-width($breakpoint-name, $columns-count) {
+  @if map-has-key($grid-columns, $breakpoint-name) {
+    @return $columns-count / map-get($grid-columns, $breakpoint-name) * 100%;
+  } @else {
+    @return $columns-count / map-get($grid-columns, default) * 100%;
+  }
+}
+
 /// Creates a grid container
 @mixin grid-container {
   width: 100%;
@@ -67,17 +79,6 @@ $grid-container-width: (
   @include set-grid-column-width(
     grid-column-width($breakpoint-name, $columns-count) * (12 / $container-size)
   );
-}
-
-/// Gets a column width
-/// @param {string} $breakpoint-name - one of breakpoint names declared in the media configuration
-/// @param {number} $columns-count
-@function grid-column-width($breakpoint-name, $columns-count) {
-  @if map-has-key($grid-columns, $breakpoint-name) {
-    @return $columns-count / map-get($grid-columns, $breakpoint-name) * 100%;
-  } @else {
-    @return $columns-count / map-get($grid-columns, default) * 100%;
-  }
 }
 
 /// Creates a grid column
