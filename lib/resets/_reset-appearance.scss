@@ -2,5 +2,6 @@
 
 /// Resets the appearance property
 @mixin reset-appearance {
-  @include prefix(appearance, none, webkit, moz);
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
