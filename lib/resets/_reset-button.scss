@@ -1,5 +1,3 @@
-@import './reset-appearance';
-
 /// Resets a button's default styles
 /// @param {string} $cursor [pointer]
 @mixin reset-button($cursor: pointer) {
