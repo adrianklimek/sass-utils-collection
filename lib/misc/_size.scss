@@ -1,0 +1,7 @@
+/// Sets width and height
+/// @param {string} $width
+/// @param {string} $height [] - if not supplied `width` parameter is used instead
+@mixin size($width, $height: null) {
+  width: $width;
+  height: if($height, $height, $width)
+}

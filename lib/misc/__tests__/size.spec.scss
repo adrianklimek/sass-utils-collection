@@ -1,0 +1,30 @@
+@import '../../test';
+@import '../size';
+
+@include describe('[mixin] size') {
+  @include it('sets `width` and `height`') {
+    @include assert {
+      @include output {
+        @include size(100px, 20%);
+      }
+
+      @include expect {
+        width: 100px;
+        height: 20%;
+      }
+    }
+  }
+
+  @include it('sets the same `height` and `width` when called with only one argument') {
+    @include assert {
+      @include output {
+        @include size(100px);
+      }
+
+      @include expect {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+}
