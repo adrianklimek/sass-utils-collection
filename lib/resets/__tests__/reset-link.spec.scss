@@ -14,4 +14,17 @@
       }
     }
   }
+
+  @include it('sets color') {
+    @include assert {
+      @include output {
+        @include reset-link(red);
+      }
+
+      @include expect {
+        text-decoration: none;
+        color: red;
+      }
+    }
+  }
 }

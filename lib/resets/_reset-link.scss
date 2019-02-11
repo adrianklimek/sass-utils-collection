@@ -1,5 +1,6 @@
 /// Resets a link's default styles
-@mixin reset-link {
+/// @param {string} $color [inherit]
+@mixin reset-link($color: inherit) {
   text-decoration: none;
-  color: inherit;
+  color: $color;
 }
