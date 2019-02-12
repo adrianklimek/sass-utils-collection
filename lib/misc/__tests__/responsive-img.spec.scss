@@ -2,14 +2,14 @@
 @import '../responsive-img';
 
 @include describe('[mixin] responsive-img') {
-  @include it('sets `display` to `block` and `max-width` to `100%`') {
+  @include it('sets `display` to `block` and `width` to `100%`') {
     @include assert {
       @include output {
         @include responsive-img;
       }
 
       @include expect {
-        max-width: 100%;
+        width: 100%;
         display: block;
       }
     }
