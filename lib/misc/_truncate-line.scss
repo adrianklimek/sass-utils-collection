@@ -1,0 +1,6 @@
+/// Truncates text in a one line
+@mixin truncate-line {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

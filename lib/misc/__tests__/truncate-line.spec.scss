@@ -1,0 +1,18 @@
+@import '../../test';
+@import '../truncate-line';
+
+@include describe('[mixin] truncate-line') {
+  @include it('sets properties needed to truncate a text line') {
+    @include assert {
+      @include output {
+        @include truncate-line;
+      }
+
+      @include expect {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}
