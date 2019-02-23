@@ -44,7 +44,8 @@
         8. [property](#property)
         9. [random-color](#random-color)
         10. [responsive-img](#responsive-img)
-        11. [truncate-text-line](#truncate-text-line)
+        11. [size](#size)
+        12. [truncate-text-line](#truncate-text-line)
   5. [License](#license)
 
   ## Installation
@@ -312,6 +313,10 @@
   
   Resets a link's default styles
   
+  ##### Parameters
+  | name | type | default | description |
+  | ---- | ---- | ------- | ----------- |
+  |color|string|inherit|-|
   
   #### reset-list
   *type: mixin*
@@ -359,7 +364,7 @@
   #### enable-kerning
   *type: mixin*
   
-  Enables font's kerning – improves spacing and fit of spe­cific pairs of let­ters
+  Enables font's kerning – improves spacing and fit of specific pairs of letters
   
   
   #### font-smoothing
@@ -416,6 +421,17 @@
   
   Makes an image responsive
   
+  
+  #### size
+  *type: mixin*
+  
+  Sets width and height
+  
+  ##### Parameters
+  | name | type | default | description |
+  | ---- | ---- | ------- | ----------- |
+  |width|string|-|-|
+  |height|string|-|if not supplied `width` parameter is used instead|
   
   #### truncate-text-line
   *type: mixin*
