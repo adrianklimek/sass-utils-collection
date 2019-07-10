@@ -6,10 +6,8 @@
     "stylelint-scss"
   ],
   "rules": {
-    "number-leading-zero": "never",
     "max-nesting-depth": 2,
     "property-no-vendor-prefix": null,
-    "order/properties-alphabetical-order": null,
-    "color-named": null
+    "order/properties-alphabetical-order": null
   }
 }
