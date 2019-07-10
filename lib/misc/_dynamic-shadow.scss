@@ -3,7 +3,7 @@
 /// @param {string} $offset-y
 /// @param {string} $blur-radius
 /// @param {number} $opacity [0.75]
-@mixin dynamic-shadow($offset-x, $offset-y, $blur-radius, $opacity: .75) {
+@mixin dynamic-shadow($offset-x, $offset-y, $blur-radius, $opacity: 0.75) {
   position: relative;
   z-index: 1;
 
