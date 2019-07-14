@@ -38,14 +38,15 @@
         2. [clearfix](#clearfix)
         3. [dynamic-shadow](#dynamic-shadow)
         4. [enable-kerning](#enable-kerning)
-        5. [font-smoothing](#font-smoothing)
-        6. [hide-visually](#hide-visually)
-        7. [prefix](#prefix)
-        8. [property](#property)
-        9. [random-color](#random-color)
-        10. [responsive-img](#responsive-img)
-        11. [size](#size)
-        12. [truncate-text-line](#truncate-text-line)
+        5. [fluid-value](#fluid-value)
+        6. [font-smoothing](#font-smoothing)
+        7. [hide-visually](#hide-visually)
+        8. [prefix](#prefix)
+        9. [property](#property)
+        10. [random-color](#random-color)
+        11. [responsive-img](#responsive-img)
+        12. [size](#size)
+        13. [truncate-line](#truncate-line)
   5. [License](#license)
 
   ## Installation
@@ -367,6 +368,20 @@
   Enables font's kerning – improves spacing and fit of specific pairs of letters
   
   
+  #### fluid-value
+  *type: function*
+  
+  Returns fluid value based on viewport size
+  
+  ##### Parameters
+  | name | type | default | description |
+  | ---- | ---- | ------- | ----------- |
+  |from|number|-|-|
+  |to|number|-|-|
+  |media-from|number|-|-|
+  |media-to|number|-|-|
+  |unit|number|vw|`vw` or `vh`|
+  
   #### font-smoothing
   *type: mixin*
   
@@ -433,15 +448,10 @@
   |width|string|-|-|
   |height|string|-|if not supplied `width` parameter is used instead|
   
-  #### truncate-text-line
+  #### truncate-line
   *type: mixin*
   
-  Truncates text line
-  
-  ##### Parameters
-  | name | type | default | description |
-  | ---- | ---- | ------- | ----------- |
-  |width|string|null|-|
+  Truncates text in a one line
 
   ## License
   sass-utils-collection is licensed under [MIT license](https://opensource.org/licenses/MIT).

@@ -1,0 +1,28 @@
+@import '../../test';
+@import '../fluid-value';
+
+@include describe('[function] fluid-value') {
+  @include it('returns fluid value with `vw` as default unit') {
+    @include assert {
+      @include output {
+        font-size: fluid-value(12px, 20px, 320px, 768px);
+      }
+
+      @include expect {
+        font-size: calc(0.01786vw + 6.28571px);
+      }
+    }
+  }
+
+  @include it('returns fluid value with `vh` unit') {
+    @include assert {
+      @include output {
+        font-size: fluid-value(12px, 20px, 320px, 768px, vh);
+      }
+
+      @include expect {
+        font-size: calc(0.01786vh + 6.28571px);
+      }
+    }
+  }
+}
