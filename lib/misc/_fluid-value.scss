@@ -1,0 +1,12 @@
+/// Returns fluid value based on viewport size
+/// @param {number} $from
+/// @param {number} $to
+/// @param {number} $media-from
+/// @param {number} $media-to
+/// @param {number} $unit [vw] - `vw` or `vh`
+@function fluid-value($from, $to, $media-from, $media-to, $unit: 'vw') {
+  $a: ($to - $from) / ($media-to - $media-from);
+  $b: $from - $a * $media-from;
+
+  @return calc(#{$a + $unit} + #{$b});
+}
