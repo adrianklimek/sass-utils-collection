@@ -3,5 +3,5 @@ const glob = require('glob')
 const True = require('sass-true')
 
 glob
-  .sync(path.resolve(__dirname, '**/*.spec.scss'))
+  .sync(path.resolve(__dirname, '../', '**/*.spec.scss'))
   .forEach(file => True.runSass({ file }, describe, it))
