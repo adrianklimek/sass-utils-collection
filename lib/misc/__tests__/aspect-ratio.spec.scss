@@ -2,10 +2,23 @@
 @import '../aspect-ratio';
 
 @include describe('[mixin] aspect-ratio') {
-  @include it('sets properties needed to apply a size ratio effect') {
+  @include it('sets ratio to 1:1 as default one') {
     @include assert {
       @include output {
         @include aspect-ratio;
+      }
+
+      @include contains {
+        position: relative;
+        padding-top: 100%;
+      }
+    }
+  }
+
+  @include it('allows element to grow when content takes more space than element size') {
+    @include assert {
+      @include output {
+        @include aspect-ratio(1, 1, $grow: true)
       }
 
       @include contains {
@@ -15,6 +28,7 @@
         }
 
         &::before {
+          padding-top: 100%;
           float: left;
         }
 
@@ -26,35 +40,31 @@
     }
   }
 
-  @include it('sets ratio to 1:1 when there are no arguments declared') {
+  @include it('sets aspect ratio') {
     @include assert {
       @include output {
-        @include aspect-ratio;
+        @include aspect-ratio(16, 9)
       }
 
       @include contains {
-        &::before {
-          padding-top: 100%;
-        }
+        padding-top: 56.25%;
       }
     }
   }
 
-  @include it('keeps ratio when `$force-ratio` is set to true') {
+  @include it('add styles to content element') {
     @include assert {
       @include output {
-        @include aspect-ratio(1, 1, true)
+        @include aspect-ratio(16, 9, '.content')
       }
 
       @include contains {
-        & {
-          position: relative;
-        }
-
-        &::before{
-          content: '';
-          display: block;
-          padding-top: 100%;
+        .content {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
         }
       }
     }

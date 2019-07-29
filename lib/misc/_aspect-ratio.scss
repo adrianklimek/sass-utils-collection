@@ -1,17 +1,10 @@
 /// Sets width to height size ratio
 /// @param {number} $width [1]
 /// @param {number} $height [1]
-/// @param {boolean} $force-ratio – forces to keep ratio when its content is bigger, it also requires content to be absolute
-@mixin aspect-ratio($width: 1, $height: 1, $force-ratio: false) {
-  @if $force-ratio {
-    position: relative;
-
-    &::before {
-      content: '';
-      display: block;
-      padding-top: $height / $width * 100%;
-    }
-  } @else {
+/// @param {string} $content-selector [null] - used only when `$grow` parameter is set to `false`
+/// @param {boolean} $grow [false] - allows content to increase element size when content takes more space
+@mixin aspect-ratio($width: 1, $height: 1, $content-selector: null, $grow: false) {
+  @if $grow {
     &::before,
     &::after {
       content: '';
@@ -25,6 +18,19 @@
     &::after {
       display: block;
       clear: both;
+    }
+  } @else {
+    position: relative;
+    padding-top: $height / $width * 100%;
+
+    @if $content-selector {
+      #{$content-selector} {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
     }
   }
 }

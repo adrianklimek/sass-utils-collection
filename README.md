@@ -341,7 +341,8 @@
   | ---- | ---- | ------- | ----------- |
   |width|number|1|-|
   |height|number|1|-|
-  |force-ratio|boolean|-|– forces to keep ratio when its content is bigger, it also requires content to be absolute|
+  |content-selector|string|null|used only when `$grow` parameter is set to `false`|
+  |grow|boolean|false|allows content to increase element size when content takes more space|
   
   #### clearfix
   *type: mixin*
