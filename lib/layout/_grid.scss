@@ -16,7 +16,7 @@ $grid-columns: (
 ) !default;
 
 $grid-container-width: (
-  xs: 1440px,
+  default: 1440px,
 ) !default;
 
 
@@ -37,8 +37,12 @@ $grid-container-width: (
   margin: 0 auto;
 
   @each $breakpoint-name, $space in $grid-container-width {
-    @include media-up($breakpoint-name) {
+    @if ($breakpoint-name == default) {
       max-width: $space;
+    } @else {
+      @include media-up($breakpoint-name) {
+        max-width: $space;
+      }
     }
   }
 
