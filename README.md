@@ -40,13 +40,13 @@
         4. [enable-kerning](#enable-kerning)
         5. [fluid-value](#fluid-value)
         6. [font-smoothing](#font-smoothing)
-        7. [hide-visually](#hide-visually)
-        8. [prefix](#prefix)
-        9. [property](#property)
-        10. [random-color](#random-color)
-        11. [responsive-img](#responsive-img)
-        12. [size](#size)
-        13. [truncate-line](#truncate-line)
+        7. [prefix](#prefix)
+        8. [property](#property)
+        9. [random-color](#random-color)
+        10. [responsive-img](#responsive-img)
+        11. [size](#size)
+        12. [truncate-line](#truncate-line)
+        13. [visually-hidden](#visually-hidden)
   5. [License](#license)
 
   ## Installation
@@ -274,7 +274,7 @@
   #### sticky-footer
   *type: mixin*
   
-  Makes an element stay always at the bottom\
+  Makes an element stay always at the bottom
   Note: for cross-browser support additional code is needed: https://github.com/philipwalton/solved-by-flexbox/blob/master/assets/css/components/site.css
   
   ##### Parameters
@@ -389,16 +389,6 @@
   Enables anti-aliasing effect
   
   
-  #### hide-visually
-  *type: mixin*
-  
-  Applies visually hidden utility — https://a11yproject.com/posts/how-to-hide-content/
-  
-  ##### Parameters
-  | name | type | default | description |
-  | ---- | ---- | ------- | ----------- |
-  |is-focusable|boolean|false|-|
-  
   #### prefix
   *type: mixin*
   
@@ -453,6 +443,12 @@
   *type: mixin*
   
   Truncates text in a one line
+  
+  
+  #### visually-hidden
+  *type: mixin*
+  
+  Applies visually hidden utility - https://a11yproject.com/posts/how-to-hide-content/
 
   ## License
   sass-utils-collection is licensed under [MIT license](https://opensource.org/licenses/MIT).

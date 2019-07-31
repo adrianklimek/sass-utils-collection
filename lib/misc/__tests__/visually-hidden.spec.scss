@@ -1,0 +1,30 @@
+@import '../../test';
+@import '../visually-hidden';
+
+@include describe('[mixin] visually-hidden') {
+  @include it('sets properties needed to hide content on screens') {
+    @include assert {
+      @include output {
+        @include visually-hidden;
+      }
+
+      @include expect {
+        &:not(:focus):not(:active) {
+          position: absolute;
+
+          width: 1px;
+          height: 1px;
+          margin: -1px;
+          border: 0;
+          padding: 0;
+
+          white-space: nowrap;
+
+          clip-path: inset(100%);
+          clip: rect(0 0 0 0);
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}
