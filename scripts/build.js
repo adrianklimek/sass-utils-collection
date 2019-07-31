@@ -78,7 +78,7 @@ const createDocs = ({ layout, resets, misc }) => (
   Import it in your main sass file
 
   \`\`\`
-  @import 'sass-utils-collection';
+  @import '~sass-utils-collection';
   \`\`\`
 
   Depending on your configuration, you may need to include a full path:
