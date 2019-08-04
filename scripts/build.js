@@ -84,7 +84,7 @@ const createDocs = ({ layout, resets, misc }) => (
   Depending on your configuration, you may need to include a full path:
 
   \`\`\`
-  @import './node_modules/sass-utils-collection/lib/index';
+  @import './node_modules/sass-utils-collection/index';
   \`\`\`
 
   ## Configuration

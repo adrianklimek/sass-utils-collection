@@ -2,7 +2,7 @@
   "name": "sass-utils-collection",
   "version": "1.0.0",
   "description": "A collection of sass mixins and functions",
-  "main": "lib/index.scss",
+  "main": "index.scss",
   "directories": {
     "lib": "lib"
   },
