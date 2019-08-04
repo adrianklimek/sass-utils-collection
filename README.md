@@ -275,7 +275,7 @@
   *type: mixin*
   
   Makes an element stay always at the bottom
-  Note: for cross-browser support additional code is needed: https://github.com/philipwalton/solved-by-flexbox/blob/master/assets/css/components/site.css
+  Note: for cross-browser support additional code may be needed: https://github.com/philipwalton/solved-by-flexbox/blob/master/assets/css/components/site.css
   
   ##### Parameters
   | name | type | default | description |
