@@ -52,7 +52,7 @@ const createDocs = ({ layout, resets, misc }) => (
   2. [Usage](#usage)
   3. [Configuration](#configuration)
      1. [Media breakpoints](#media-breakpoints)
-     2. [Grid](#grid)
+     2. [Flexbox Grid](#flexbox-grid)
   4. [Utils](#utils)
      1. [Layout](#layout) 
         ${ applyIndent(createAnchorList(layout), 8)}
@@ -75,7 +75,7 @@ const createDocs = ({ layout, resets, misc }) => (
   \`\`\`
 
   ## Usage
-  Import it in your main sass file
+  Import it in your main sass file:
 
   \`\`\`
   @import '~sass-utils-collection';
@@ -85,6 +85,14 @@ const createDocs = ({ layout, resets, misc }) => (
 
   \`\`\`
   @import './node_modules/sass-utils-collection/index';
+  \`\`\`
+  
+  Or import modules manually:
+  
+  \`\`\`
+  @import '~sass-utils-collection/lib/layout/media';
+  @import '~sass-utils-collection/lib/layout/hide';
+  @import '~sass-utils-collection/lib/layout/flexbox-grid';
   \`\`\`
 
   ## Configuration
@@ -101,7 +109,8 @@ const createDocs = ({ layout, resets, misc }) => (
     xl: 1440px,
   );
   \`\`\`
-  ### Grid
+  ### Flexbox Grid
+  *From version 1.0.0 grid module has to be imported manually* (lib/layout/flexbox-grid)
   Grid's breakpoint names has to correspond to names from the media configuration.
 
   The \`$grid-columns\` map has to have a \`default\` property.
@@ -124,7 +133,7 @@ const createDocs = ({ layout, resets, misc }) => (
   );
 
   $grid-container-width: (
-    xs: 1440px,
+    default: 1440px,
   );
   \`\`\`
 
