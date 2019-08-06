@@ -1,6 +1,22 @@
 /// Makes an element stay always at the bottom
 /// Note: for cross-browser support additional code may be needed: https://github.com/philipwalton/solved-by-flexbox/blob/master/assets/css/components/site.css
 /// @param {string} $content-selector - selector like `.content` or `&__content`
+/// @example scss
+///  // Usage
+///  .el {
+///    @include sticky-footer(.content);
+///  }
+///
+///  // Output
+///  .el {
+///    display: flex;
+///    flex-direction: column;
+///    min-height: 100vh;
+///  }
+///
+///  .el .content {
+///    flex: 1;
+///  }
 @mixin sticky-footer($content-selector) {
   display: flex;
   flex-direction: column;

@@ -141,7 +141,31 @@ Centers an element's content
 | name | type | default | description |
 | ---- | ---- | ------- | ----------- |
 |type|string|both|one of: both, vertically, horizontally|
+##### Example 
+```scss
+// Usage
+.el-1 {
+  @include center-content;
+}
 
+.el-2 {
+  @include center-content(vertically);
+}
+
+// Output
+.el-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.el-2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+```
 #### center-self
 *type: mixin*
 
@@ -152,7 +176,31 @@ Centers an element
 | ---- | ---- | ------- | ----------- |
 |type|string|both|one of: both, horizontally, vertically|
 |position|string|absolute|-|
+##### Example 
+```scss
+// Usage
+.el-1 {
+  @include center-self;
+}
 
+.el-2 {
+  @include center-self(vertically, relative);
+}
+
+// Output
+.el-1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+.el-2 {
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%)
+}
+```
 #### fill-space
 *type: mixin*
 
@@ -163,7 +211,34 @@ Fills the space of it's parent
 | ---- | ---- | ------- | ----------- |
 |size|string|100%|when it is smaller or greater than 100% content will be also centered|
 |position|string|absolute|-|
+##### Example 
+```scss
+// Usage
+.el-1 {
+  @include fill-space;
+}
 
+.el-2 {
+  @include fill-space(80%, relative);
+}
+
+// Output
+.el-1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.el-2 {
+  position: relative;
+  width: 80%;
+  height: 80%;
+  top: 10%;
+  left: 10%;
+}
+```
 #### grid-column-width
 *type: function*
 
@@ -239,7 +314,30 @@ Hides element on a screen resolution equal or greater than given one
 | ---- | ---- | ------- | ----------- |
 |breakpoint-name|string|null|one of breakpoint names declared in the media configuration|
 |width|string|null|custom width can be used instead of breakpoint name|
+##### Example 
+```scss
+// Usage
+.el-1 {
+  @include hide-up(md);
+}
 
+.el-2 {
+  @include hide-up($width: 1044px);
+}
+
+// Output
+@media (min-width: 768px) {
+  .el-1 {
+    display: none;
+  }
+}
+
+@media (min-width: 1044px) {
+  .el-2 {
+    display: none;
+  }
+}
+```
 #### hide-down
 *type: mixin*
 
@@ -250,7 +348,30 @@ Hides element on a screen resolution smaller than given one
 | ---- | ---- | ------- | ----------- |
 |breakpoint-name|string|null|one of breakpoint names declared in the media configuration|
 |width|string|null|custom width can be used instead of breakpoint name|
+##### Example 
+```scss
+// Usage
+.el-1 {
+  @include hide-down(md);
+}
 
+.el-2 {
+  @include hide-down($width: 1044px);
+}
+
+// Output
+@media (max-width: 767px) {
+  .el-1 {
+    display: none;
+  }
+}
+
+@media (max-width: 1043px) {
+  .el-2 {
+    display: none;
+  }
+}
+```
 #### media
 *type: mixin*
 
@@ -273,7 +394,34 @@ Applies styles to screen resolutions equal or greater than given one
 | ---- | ---- | ------- | ----------- |
 |breakpoint|string|null|one of breakpoint names declared in the media configuration|
 |width|string|null|custom width can be used instead of breakpoint name|
+##### Example 
+```scss
+// Usage
+.el-1 {
+  @include media-up(md) {
+    width: 50%;
+  }
+}
 
+.el-2 {
+  @include media-up($width: 1500px) {
+    width: 1000px;
+  }
+}
+
+// Output
+@media (min-width: 768px) {
+  .el-1 {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1500px) {
+  .el-2 {
+    width: 1000px;
+  }
+}
+```
 #### media-down
 *type: mixin*
 
@@ -284,7 +432,34 @@ Applies styles to screen resolutions smaller than given one
 | ---- | ---- | ------- | ----------- |
 |breakpoint|string|null|one of breakpoint names declared in the media configuration|
 |width|string|null|custom width can be used instead of breakpoint name|
+##### Example 
+```scss
+// Usage
+.el-1 {
+  @include media-down(md) {
+    width: 100%;
+  }
+}
 
+.el-2 {
+  @include media-down($width: 1500px) {
+    width: 500px;
+  }
+}
+
+// Output
+@media (max-width: 767px) {
+  .el-1 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1499px) {
+  .el-2 {
+    width: 500px;
+  }
+}
+```
 #### sticky-footer
 *type: mixin*
 
@@ -295,6 +470,24 @@ Note: for cross-browser support additional code may be needed: https://github.co
 | name | type | default | description |
 | ---- | ---- | ------- | ----------- |
 |content-selector|string|-|selector like `.content` or `&__content`|
+##### Example 
+```scss
+// Usage
+.el {
+  @include sticky-footer(.content);
+}
+
+// Output
+.el {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.el .content {
+  flex: 1;
+}
+```
 
 ### Resets
 #### reset-appearance

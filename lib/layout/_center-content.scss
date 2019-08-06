@@ -1,5 +1,28 @@
 /// Centers an element's content
 /// @param {string} $type [both] - one of: both, vertically, horizontally
+/// @example scss
+///  // Usage
+///  .el-1 {
+///    @include center-content;
+///  }
+///
+///  .el-2 {
+///    @include center-content(vertically);
+///  }
+///
+///  // Output
+///  .el-1 {
+///    display: flex;
+///    flex-direction: row;
+///    justify-content: center;
+///    align-items: center;
+///  }
+///
+///  .el-2 {
+///    display: flex;
+///    flex-direction: row;
+///    align-items: center;
+///  }
 @mixin center-content($type: both) {
   display: flex;
   flex-direction: row;

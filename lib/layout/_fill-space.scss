@@ -1,6 +1,32 @@
 /// Fills the space of it's parent
 /// @param {string} $size [100%] - when it is smaller or greater than 100% content will be also centered
 /// @param {string} $position [absolute]
+/// @example scss
+///  // Usage
+///  .el-1 {
+///    @include fill-space;
+///  }
+///
+///  .el-2 {
+///    @include fill-space(80%, relative);
+///  }
+///
+///  // Output
+///  .el-1 {
+///    position: absolute;
+///    width: 100%;
+///    height: 100%;
+///    top: 0;
+///    left: 0;
+///  }
+///
+///  .el-2 {
+///    position: relative;
+///    width: 80%;
+///    height: 80%;
+///    top: 10%;
+///    left: 10%;
+///  }
 @mixin fill-space($size: 100%, $position: absolute) {
   position: $position;
   width: $size;

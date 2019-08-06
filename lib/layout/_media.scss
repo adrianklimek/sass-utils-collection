@@ -34,6 +34,32 @@ $media-breakpoints: (
 /// Applies styles to screen resolutions equal or greater than given one
 /// @param {string} $breakpoint [null] - one of breakpoint names declared in the media configuration
 /// @param {string} $width [null] - custom width can be used instead of breakpoint name
+/// @example scss
+///  // Usage
+///  .el-1 {
+///    @include media-up(md) {
+///      width: 50%;
+///    }
+///  }
+///
+///  .el-2 {
+///    @include media-up($width: 1500px) {
+///      width: 1000px;
+///    }
+///  }
+///
+///  // Output
+///  @media (min-width: 768px) {
+///    .el-1 {
+///      width: 50%;
+///    }
+///  }
+///
+///  @media (min-width: 1500px) {
+///    .el-2 {
+///      width: 1000px;
+///    }
+///  }
 @mixin media-up($breakpoint: null, $width: null) {
   @include media($breakpoint, true, $width) {
     @content;
@@ -43,6 +69,32 @@ $media-breakpoints: (
 /// Applies styles to screen resolutions smaller than given one
 /// @param {string} $breakpoint [null] - one of breakpoint names declared in the media configuration
 /// @param {string} $width [null] - custom width can be used instead of breakpoint name
+/// @example scss
+///  // Usage
+///  .el-1 {
+///    @include media-down(md) {
+///      width: 100%;
+///    }
+///  }
+///
+///  .el-2 {
+///    @include media-down($width: 1500px) {
+///      width: 500px;
+///    }
+///  }
+///
+///  // Output
+///  @media (max-width: 767px) {
+///    .el-1 {
+///      width: 100%;
+///    }
+///  }
+///
+///  @media (max-width: 1499px) {
+///    .el-2 {
+///      width: 500px;
+///    }
+///  }
 @mixin media-down($breakpoint: null, $width: null) {
   @include media($breakpoint, false, $width) {
     @content;

@@ -1,10 +1,33 @@
 /// Centers an element
 /// @param {string} $type [both] - one of: both, horizontally, vertically
 /// @param {string} $position [absolute]
+/// @example scss
+///  // Usage
+///  .el-1 {
+///    @include center-self;
+///  }
+///
+///  .el-2 {
+///    @include center-self(vertically, relative);
+///  }
+///
+///  // Output
+///  .el-1 {
+///    position: absolute;
+///    top: 50%;
+///    left: 50%;
+///    transform: translate(-50%, -50%)
+///  }
+///
+///  .el-2 {
+///    position: relative;
+///    top: 50%;
+///    transform: translate(0, -50%)
+///  }
 @mixin center-self($type: both, $position: absolute) {
   $x: $type == both or $type == horizontally;
   $y: $type == both or $type == vertically;
-  
+
   position: $position;
   top: if($y, 50%, null);
   left: if($x, 50%, null);
