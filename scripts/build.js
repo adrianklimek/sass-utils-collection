@@ -7,6 +7,7 @@ const createDocData = entry => ({
   name: entry.context.name,
   parameters: entry.parameter,
   type: entry.context.type,
+  examples: entry.example,
 })
 
 const build = async (path) => {

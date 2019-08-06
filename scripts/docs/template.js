@@ -18,12 +18,24 @@ const createParamsTable = (content = []) => {
   return `${ heading }\n${ tableHeading }\n${ divider }\n${ rows }\n`
 }
 
+const createExample = examples => {
+  const example = examples && examples[0]
+  if (example) {
+    const heading = `##### Example \n`
+    const codeTag = '```'
+    const content = `${codeTag}scss\n${example.code}\n${codeTag}`
+    return heading + content
+  }
+
+  return ''
+}
+
 const createList = items => {
   const createEntryDetails = item =>
     `#### ${ item.name }\n*type: ${ item.type }*\n\n${ item.description }\n`
 
   return items
-    .map(item => createEntryDetails(item) + createParamsTable(item.parameters))
+    .map(item => createEntryDetails(item) + createParamsTable(item.parameters) + createExample(item.examples))
     .join('\n')
     .trim()
 }
