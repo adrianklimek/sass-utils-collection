@@ -1,7 +1,19 @@
 /// Applies prefixes to given property
 /// @param {string} $property
-/// @param {string} $value 
+/// @param {string} $value
 /// @param {string} $prefixes... - any number of arguments with prefixes
+/// @example scss
+///  // Usage
+///  .el {
+///    @include prefix(appearance, none, moz, webkit);
+///  }
+///
+///  // Output
+///  .el {
+///    -moz-appearance: none;
+///    -webkit-appearance: none;
+///    appearance: none;
+///  }
 @mixin prefix($property, $value, $prefixes...) {
   @each $prefix in $prefixes {
     -#{$prefix}-#{$property}: $value;

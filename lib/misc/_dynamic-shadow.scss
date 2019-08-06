@@ -3,6 +3,34 @@
 /// @param {string} $offset-y
 /// @param {string} $blur-radius
 /// @param {number} $opacity [0.75]
+/// @example scss
+///  // Usage
+///  .el {
+///    @include dynamic-shadow(20px, 20px, 5px);
+///  }
+///
+///  // Output
+///  .el {
+///    position: relative;
+///    z-index: 1;
+///  }
+///
+///  .el::after {
+///    content: '';
+///    position: absolute;
+///    top: 20px;
+///    left: 20px;
+///
+///    width: 100%;
+///    height: 100%;
+///
+///    filter: blur(5px);
+///    opacity: 0.75;
+///
+///    background: inherit;
+///    border-radius: inherit;
+///    z-index: -1;
+///  }
 @mixin dynamic-shadow($offset-x, $offset-y, $blur-radius, $opacity: 0.75) {
   position: relative;
   z-index: 1;

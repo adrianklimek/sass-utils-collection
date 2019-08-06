@@ -1,4 +1,15 @@
 /// Makes an image responsive
+/// @example scss
+///  // Usage
+///  .el {
+///    @include responsive-img;
+///  }
+///
+///  // Output
+///  .el {
+///    width: 100%;
+///    display: block;
+///  }
 @mixin responsive-img {
   width: 100%;
   display: block;

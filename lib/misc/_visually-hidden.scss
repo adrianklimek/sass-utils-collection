@@ -1,4 +1,26 @@
 /// Applies visually hidden utility - https://a11yproject.com/posts/how-to-hide-content/
+/// @example scss
+///  // Usage
+///  .el {
+///    @include visually-hidden;
+///  }
+///
+///  // Output
+///  .el:not(:focus):not(:active) {
+///    position: absolute;
+///
+///    width: 1px;
+///    height: 1px;
+///    margin: -1px;
+///    border: 0;
+///    padding: 0;
+///
+///    white-space: nowrap;
+///
+///    clip-path: inset(100%);
+///    clip: rect(0 0 0 0);
+///    overflow: hidden;
+///  }
 @mixin visually-hidden {
   &:not(:focus):not(:active) {
     position: absolute;

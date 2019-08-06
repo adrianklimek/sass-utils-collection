@@ -1,4 +1,15 @@
-/// Enables font's kerning – improves spacing and fit of specific pairs of letters
+/// Enables font's kerning — improves spacing and fit of specific pairs of letters
+/// @example scss
+///  // Usage
+///  .el {
+///    @include enable-kerning;
+///  }
+///
+///  // Output
+///  .el {
+///    -webkit-font-smoothing: antialiased;
+///    -moz-osx-font-smoothing: grayscale;
+///  }
 @mixin enable-kerning {
   font-feature-settings: 'kern' 1;
   text-rendering: optimizeLegibility;

@@ -1,4 +1,15 @@
 /// Enables anti-aliasing effect
+/// @example scss
+///  // Usage
+///  .el {
+///    @include font-smoothing;
+///  }
+///
+///  // Output
+///  .el {
+///    -webkit-font-smoothing: antialiased;
+///    -moz-osx-font-smoothing: grayscale;
+///  }
 @mixin font-smoothing {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

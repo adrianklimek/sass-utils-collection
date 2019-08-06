@@ -1,6 +1,18 @@
 /// Applies the same value to multiple properties
 /// @param {string} $value
 /// @param {string} $properties... - any number of arguments with properties
+/// @example scss
+///  // Usage
+///  .el {
+///    @include property(inherit, background-color, color, font);
+///  }
+///
+///  // Output
+///  .el {
+///    background-color: inherit;
+///    colo: inherit;
+///    font: inherit;
+///  }
 @mixin property($value, $properties...) {
   @each $property in $properties {
     #{$property}: $value;

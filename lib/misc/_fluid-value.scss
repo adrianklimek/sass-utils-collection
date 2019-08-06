@@ -4,7 +4,25 @@
 /// @param {number} $media-from
 /// @param {number} $media-to
 /// @param {number} $unit [vw] - `vw` or `vh`
-@function fluid-value($from, $to, $media-from, $media-to, $unit: 'vw') {
+/// @example scss
+///  // Usage
+///  .el-1 {
+///    font-size: fluid-value(16px, 24px, 320px, 768px);
+///  }
+///
+///  .el-2 {
+///    font-size: fluid-value(16px, 24px, 320px, 768px, vh);
+///  }
+///
+///  // Output
+///  .el-1 {
+///    font-size: calc(0.0178571429vw + 10.2857142857px);
+///  }
+///
+///  .el-2 {
+///    font-size: calc(0.0178571429vh + 10.2857142857px);
+///  }
+@function fluid-value($from, $to, $media-from, $media-to, $unit: vw) {
   $a: ($to - $from) / ($media-to - $media-from);
   $b: $from - $a * $media-from;
 

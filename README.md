@@ -444,13 +444,74 @@ Sets width to height size ratio
 |height|number|1|-|
 |content-selector|string|null|used only when `$grow` parameter is set to `false`|
 |grow|boolean|false|allows content to increase element size when content takes more space|
+##### Example 
+```scss
+// Usage
+.el-1 {
+  @include aspect-ratio(16, 9);
+}
 
+.el-2 {
+  @include aspect-ratio(16, 9, '.content');
+}
+
+.el-3 {
+  @include aspect-ratio(4, 3, $grow: true);
+}
+
+// Output
+.el-1 {
+  position: relative;
+  padding-top: 0.5625%;
+}
+
+.el-2 {
+  position: relative;
+  padding-top: 0.5625%;
+}
+
+.el-2 .content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.el-3::before,
+.el-3::after {
+  content: '';
+}
+
+.el-3::before {
+  padding-top: 75%;
+  float: left;
+}
+
+.el-3::after {
+  display: block;
+  clear: both;
+}
+```
 #### clearfix
 *type: mixin*
 
 Forces an element to self-clear its children
 
+##### Example 
+```scss
+// Usage
+.el {
+  @include clearfix;
+}
 
+// Output
+.el::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+```
 #### dynamic-shadow
 *type: mixin*
 
@@ -463,13 +524,54 @@ Creates shadow based on an element's background
 |offset-y|string|-|-|
 |blur-radius|string|-|-|
 |opacity|number|0.75|-|
+##### Example 
+```scss
+// Usage
+.el {
+  @include dynamic-shadow(20px, 20px, 5px);
+}
 
+// Output
+.el {
+  position: relative;
+  z-index: 1;
+}
+
+.el::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+
+  width: 100%;
+  height: 100%;
+
+  filter: blur(5px);
+  opacity: 0.75;
+
+  background: inherit;
+  border-radius: inherit;
+  z-index: -1;
+}
+```
 #### enable-kerning
 *type: mixin*
 
-Enables font's kerning – improves spacing and fit of specific pairs of letters
+Enables font's kerning — improves spacing and fit of specific pairs of letters
 
+##### Example 
+```scss
+// Usage
+.el {
+  @include enable-kerning;
+}
 
+// Output
+.el {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+```
 #### fluid-value
 *type: function*
 
@@ -483,13 +585,44 @@ Returns fluid value based on viewport size
 |media-from|number|-|-|
 |media-to|number|-|-|
 |unit|number|vw|`vw` or `vh`|
+##### Example 
+```scss
+// Usage
+.el-1 {
+  font-size: fluid-value(16px, 24px, 320px, 768px);
+}
 
+.el-2 {
+  font-size: fluid-value(16px, 24px, 320px, 768px, vh);
+}
+
+// Output
+.el-1 {
+  font-size: calc(0.0178571429vw + 10.2857142857px);
+}
+
+.el-2 {
+  font-size: calc(0.0178571429vh + 10.2857142857px);
+}
+```
 #### font-smoothing
 *type: mixin*
 
 Enables anti-aliasing effect
 
+##### Example 
+```scss
+// Usage
+.el {
+  @include font-smoothing;
+}
 
+// Output
+.el {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+```
 #### prefix
 *type: mixin*
 
@@ -501,7 +634,20 @@ Applies prefixes to given property
 |property|string|-|-|
 |value|string|-|-|
 |prefixes...|string|-|any number of arguments with prefixes|
+##### Example 
+```scss
+// Usage
+.el {
+  @include prefix(appearance, none, moz, webkit);
+}
 
+// Output
+.el {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+```
 #### property
 *type: mixin*
 
@@ -512,7 +658,20 @@ Applies the same value to multiple properties
 | ---- | ---- | ------- | ----------- |
 |value|string|-|-|
 |properties...|string|-|any number of arguments with properties|
+##### Example 
+```scss
+// Usage
+.el {
+  @include property(inherit, background-color, color, font);
+}
 
+// Output
+.el {
+  background-color: inherit;
+  colo: inherit;
+  font: inherit;
+}
+```
 #### random-color
 *type: function*
 
@@ -522,13 +681,44 @@ Generates random rgba color
 | name | type | default | description |
 | ---- | ---- | ------- | ----------- |
 |alpha|number|1|-|
+##### Example 
+```scss
+// Usage
+.el-1 {
+  background-color: random-color();
+}
 
+.el-2 {
+  background-color: random-color(0.8);
+}
+
+// Output
+.el-1 {
+  background-color: #8399f2;
+}
+
+.el-2 {
+  background-color: rgba(218, 230, 202, 0.8);
+}
+```
 #### responsive-img
 *type: mixin*
 
 Makes an image responsive
 
+##### Example 
+```scss
+// Usage
+.el {
+  @include responsive-img;
+}
 
+// Output
+.el {
+  width: 100%;
+  display: block;
+}
+```
 #### size
 *type: mixin*
 
@@ -539,17 +729,76 @@ Sets width and height
 | ---- | ---- | ------- | ----------- |
 |width|string|-|-|
 |height|string|-|if not supplied `width` parameter is used instead|
+##### Example 
+```scss
+// Usage
+.el-1 {
+  @include size(200px);
+}
 
+.el-2 {
+  @include size(100%, 200px);
+}
+
+// Output
+.el-1 {
+  width: 200px;
+  height: 200px;
+}
+
+.el-2 {
+  width: 100%;
+  height: 200px;
+}
+```
 #### truncate-line
 *type: mixin*
 
 Truncates text in a one line
 
+##### Example 
+```scss
+// Usage
+.el {
+  @include truncate-line;
+}
 
+// Output
+.el {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+```
 #### visually-hidden
 *type: mixin*
 
 Applies visually hidden utility - https://a11yproject.com/posts/how-to-hide-content/
+
+##### Example 
+```scss
+// Usage
+.el {
+  @include visually-hidden;
+}
+
+// Output
+.el:not(:focus):not(:active) {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+```
 
 ## License
 sass-utils-collection is licensed under [MIT license](https://opensource.org/licenses/MIT).

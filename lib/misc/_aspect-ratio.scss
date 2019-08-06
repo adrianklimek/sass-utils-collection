@@ -3,6 +3,53 @@
 /// @param {number} $height [1]
 /// @param {string} $content-selector [null] - used only when `$grow` parameter is set to `false`
 /// @param {boolean} $grow [false] - allows content to increase element size when content takes more space
+/// @example scss
+///  // Usage
+///  .el-1 {
+///    @include aspect-ratio(16, 9);
+///  }
+///
+///  .el-2 {
+///    @include aspect-ratio(16, 9, '.content');
+///  }
+///
+///  .el-3 {
+///    @include aspect-ratio(4, 3, $grow: true);
+///  }
+///
+///  // Output
+///  .el-1 {
+///    position: relative;
+///    padding-top: 0.5625%;
+///  }
+///
+///  .el-2 {
+///    position: relative;
+///    padding-top: 0.5625%;
+///  }
+///
+///  .el-2 .content {
+///    position: absolute;
+///    top: 0;
+///    bottom: 0;
+///    left: 0;
+///    right: 0;
+///  }
+///
+///  .el-3::before,
+///  .el-3::after {
+///    content: '';
+///  }
+///
+///  .el-3::before {
+///    padding-top: 75%;
+///    float: left;
+///  }
+///
+///  .el-3::after {
+///    display: block;
+///    clear: both;
+///  }
 @mixin aspect-ratio($width: 1, $height: 1, $content-selector: null, $grow: false) {
   @if $grow {
     &::before,

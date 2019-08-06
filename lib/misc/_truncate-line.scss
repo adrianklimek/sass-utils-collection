@@ -1,4 +1,16 @@
 /// Truncates text in a one line
+/// @example scss
+///  // Usage
+///  .el {
+///    @include truncate-line;
+///  }
+///
+///  // Output
+///  .el {
+///    overflow: hidden;
+///    white-space: nowrap;
+///    text-overflow: ellipsis;
+///  }
 @mixin truncate-line {
   overflow: hidden;
   white-space: nowrap;
