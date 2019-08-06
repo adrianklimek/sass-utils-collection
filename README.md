@@ -302,7 +302,19 @@ Note: for cross-browser support additional code may be needed: https://github.co
 
 Resets the appearance property
 
+##### Example 
+```scss
+// Usage
+.el {
+  @include reset-appearance;
+}
 
+// Output
+.el {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+```
 #### reset-button
 *type: mixin*
 
@@ -312,17 +324,53 @@ Resets a button's default styles
 | name | type | default | description |
 | ---- | ---- | ------- | ----------- |
 |cursor|string|pointer|-|
+##### Example 
+```scss
+// Usage
+.el {
+  @include reset-button;
+}
 
+// Output
+.el {
+  background: none;
+
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  padding: 0;
+
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+```
 #### reset-input
 *type: mixin*
 
  Resets an input's default styles
 
-##### Parameters
-| name | type | default | description |
-| ---- | ---- | ------- | ----------- |
-|type|string|text|input's type, one of: text, number|
+##### Example 
+```scss
+// Usage
+.el {
+  @include reset-input;
+}
 
+// Output
+.el {
+  background: none;
+  background-clip: content-box;
+
+  border: 0;
+  border-radius: 0;
+
+  padding: 0;
+  outline: none;
+
+  box-shadow: none;
+}
+```
 #### reset-link
 *type: mixin*
 
@@ -332,17 +380,56 @@ Resets a link's default styles
 | name | type | default | description |
 | ---- | ---- | ------- | ----------- |
 |color|string|inherit|-|
+##### Example 
+```scss
+// Usage
+.el {
+  @include reset-link;
+}
 
+// Output
+.el {
+  text-decoration: none;
+  color: inherit;
+}
+```
 #### reset-list
 *type: mixin*
 
 Resets a list's default styles
 
+##### Example 
+```scss
+// Usage
+.el {
+  @include reset-list;
+}
 
+// Output
+.el {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+```
 #### reset-placeholder
 *type: mixin*
 
 Resets a placeholder's default style
+
+##### Example 
+```scss
+// Usage
+.el {
+  @include reset-placeholder;
+}
+
+// Output
+.el::placeholder {
+  opacity: 1;
+  color: inherit;
+}
+```
 
 ### Misc
 #### aspect-ratio

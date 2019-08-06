@@ -1,5 +1,24 @@
 /// Resets a button's default styles
 /// @param {string} $cursor [pointer]
+/// @example scss
+///  // Usage
+///  .el {
+///    @include reset-button;
+///  }
+///
+///  // Output
+///  .el {
+///    background: none;
+///
+///    border: 0;
+///    border-radius: 0;
+///    outline: none;
+///    padding: 0;
+///
+///    color: inherit;
+///    font: inherit;
+///    cursor: pointer;
+///  }
 @mixin reset-button($cursor: pointer) {
   background: none;
 

@@ -1,5 +1,16 @@
 /// Resets a link's default styles
 /// @param {string} $color [inherit]
+/// @example scss
+///  // Usage
+///  .el {
+///    @include reset-link;
+///  }
+///
+///  // Output
+///  .el {
+///    text-decoration: none;
+///    color: inherit;
+///  }
 @mixin reset-link($color: inherit) {
   text-decoration: none;
   color: $color;

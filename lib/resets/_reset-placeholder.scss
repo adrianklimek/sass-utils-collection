@@ -1,4 +1,15 @@
 /// Resets a placeholder's default style
+/// @example scss
+///  // Usage
+///  .el {
+///    @include reset-placeholder;
+///  }
+///
+///  // Output
+///  .el::placeholder {
+///    opacity: 1;
+///    color: inherit;
+///  }
 @mixin reset-placeholder {
   &::placeholder {
     opacity: 1;

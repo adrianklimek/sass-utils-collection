@@ -1,7 +1,25 @@
 @import '../misc/prefix';
 
 ///  Resets an input's default styles
-/// @param {string} $type [text] - input's type, one of: text, number
+/// @example scss
+///  // Usage
+///  .el {
+///    @include reset-input;
+///  }
+///
+///  // Output
+///  .el {
+///    background: none;
+///    background-clip: content-box;
+///
+///    border: 0;
+///    border-radius: 0;
+///
+///    padding: 0;
+///    outline: none;
+///
+///    box-shadow: none;
+///  }
 @mixin reset-input($type: text) {
   background: none;
   background-clip: content-box;

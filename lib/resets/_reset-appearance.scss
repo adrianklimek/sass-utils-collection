@@ -1,6 +1,17 @@
 @import '../misc/prefix';
 
 /// Resets the appearance property
+/// @example scss
+///  // Usage
+///  .el {
+///    @include reset-appearance;
+///  }
+///
+///  // Output
+///  .el {
+///    -webkit-appearance: none;
+///    -moz-appearance: none;
+///  }
 @mixin reset-appearance {
   -webkit-appearance: none;
   -moz-appearance: none;
