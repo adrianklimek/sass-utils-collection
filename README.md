@@ -102,7 +102,7 @@ $media-breakpoints: (
 *From version 1.0.0 grid module has to be imported manually* `lib/layout/flexbox-grid`
 
 
-Grid's breakpoint names has to correspond to names from the media configuration.
+Grid's breakpoint names has to correspond to the media breakpoints.
 
 The `$grid-columns` map has to have a `default` property.
 
@@ -464,6 +464,7 @@ Applies styles to screen resolutions smaller than given one
 *type: mixin*
 
 Makes an element stay always at the bottom
+
 Note: for cross-browser support additional code may be needed: https://github.com/philipwalton/solved-by-flexbox/blob/master/assets/css/components/site.css
 
 ##### Parameters
@@ -966,7 +967,7 @@ Truncates text in a one line
 #### visually-hidden
 *type: mixin*
 
-Applies visually hidden utility - https://a11yproject.com/posts/how-to-hide-content/
+Applies visually hidden utility — https://a11yproject.com/posts/how-to-hide-content/
 
 ##### Example 
 ```scss
