@@ -16,7 +16,7 @@ $media-breakpoints: (
 *From version 1.0.0 grid module has to be imported manually* `lib/layout/flexbox-grid`
 
 
-Grid's breakpoint names has to correspond to names from the media configuration.
+Grid's breakpoint names has to correspond to the media breakpoints.
 
 The `$grid-columns` map has to have a `default` property.
 
