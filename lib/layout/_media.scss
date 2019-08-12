@@ -17,11 +17,7 @@ $media-breakpoints: (
 
   $breakpoint-width: if($width, $width, map-get($media-breakpoints, $breakpoint));
   @if ($breakpoint-width != 0) {
-    $media: if(
-      $is-mobile-first,
-      'min-width: #{$breakpoint-width}',
-      'max-width: #{$breakpoint-width - 1}'
-    );
+    $media: if($is-mobile-first, 'min-width: #{$breakpoint-width}', 'max-width: #{$breakpoint-width - 1}');
 
     @media (#{$media}) {
       @content;
