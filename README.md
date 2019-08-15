@@ -46,8 +46,9 @@
         9. [random-color](#random-color)
         10. [responsive-img](#responsive-img)
         11. [size](#size)
-        12. [truncate-line](#truncate-line)
-        13. [visually-hidden](#visually-hidden)
+        12. [system-font](#system-font)
+        13. [truncate-line](#truncate-line)
+        14. [visually-hidden](#visually-hidden)
 5. [License](#license)
 
 ## Installation
@@ -943,6 +944,23 @@ Sets width and height
 .el-2 {
   width: 100%;
   height: 200px;
+}
+```
+#### system-font
+*type: mixin*
+
+Sets system's default font
+
+##### Example 
+```scss
+// Usage
+.el {
+  @include system-font;
+}
+
+// Output
+.el {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 ```
 #### truncate-line
