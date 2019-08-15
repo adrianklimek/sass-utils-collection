@@ -2,7 +2,7 @@
 @import '../truncate-line';
 
 @include describe('[mixin] truncate-line') {
-  @include it('sets properties needed to truncate a text line') {
+  @include it('sets properties needed to truncate one line text') {
     @include assert {
       @include output {
         @include truncate-line;

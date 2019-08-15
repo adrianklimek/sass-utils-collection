@@ -204,12 +204,12 @@ Centers an element
 #### fill-space
 *type: mixin*
 
-Fills the space of it's parent
+Stretch an element to fill its parent
 
 ##### Parameters
 | name | type | default | description |
 | ---- | ---- | ------- | ----------- |
-|size|string|100%|when it is smaller or greater than 100% content will be also centered|
+|size|string|100%|when it is smaller or greater than 100% content is also centered|
 |position|string|absolute|-|
 ##### Example 
 ```scss
@@ -751,7 +751,7 @@ Creates shadow based on an element's background
 #### enable-kerning
 *type: mixin*
 
-Enables font's kerning — improves spacing and fit of specific pairs of letters
+Enables font kerning — improves spacing and fit of specific pairs of letters
 
 ##### Example 
 ```scss
@@ -845,7 +845,7 @@ Applies prefixes to given property
 #### property
 *type: mixin*
 
-Applies the same value to multiple properties
+Sets the same value to multiple properties
 
 ##### Parameters
 | name | type | default | description |
@@ -948,7 +948,7 @@ Sets width and height
 #### truncate-line
 *type: mixin*
 
-Truncates text in a one line
+Truncates one line text
 
 ##### Example 
 ```scss
