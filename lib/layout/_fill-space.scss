@@ -1,5 +1,5 @@
-/// Fills the space of it's parent
-/// @param {string} $size [100%] - when it is smaller or greater than 100% content will be also centered
+/// Stretch an element to fill its parent
+/// @param {string} $size [100%] - when it is smaller or greater than 100% content is also centered
 /// @param {string} $position [absolute]
 /// @example scss
 ///  // Usage
