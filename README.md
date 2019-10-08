@@ -969,15 +969,38 @@ Truncates one line text
 
 Applies visually hidden utility — https://a11yproject.com/posts/how-to-hide-content/
 
+##### Parameters
+| name | type | default | description |
+| ---- | ---- | ------- | ----------- |
+|focusable|boolean|false|-|
 ##### Example 
 ```scss
 // Usage
-.el {
+.el-1 {
+  @include visually-hidden;
+}
+.el-2 {
   @include visually-hidden;
 }
 
 // Output
-.el:not(:focus):not(:active) {
+.el-1 {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.el-2:not(:focus):not(:active) {
   position: absolute;
 
   width: 1px;
