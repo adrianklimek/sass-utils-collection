@@ -9,6 +9,32 @@
       }
 
       @include expect {
+        & {
+          position: absolute;
+
+          width: 1px;
+          height: 1px;
+          margin: -1px;
+          border: 0;
+          padding: 0;
+
+          white-space: nowrap;
+
+          clip-path: inset(100%);
+          clip: rect(0 0 0 0);
+          overflow: hidden;
+        }
+      }
+    }
+  }
+
+  @include it('makes element visible when it receives keyboard focus') {
+    @include assert {
+      @include output {
+        @include visually-hidden(true);
+      }
+
+      @include expect {
         &:not(:focus):not(:active) {
           position: absolute;
 
