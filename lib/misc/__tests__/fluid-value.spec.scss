@@ -9,7 +9,7 @@
       }
 
       @include expect {
-        font-size: calc(0.01786vw + 6.28571px);
+        font-size: calc(1.78571vw + 6.28571px);
       }
     }
   }
@@ -21,7 +21,7 @@
       }
 
       @include expect {
-        font-size: calc(0.01786vh + 6.28571px);
+        font-size: calc(1.78571vh + 6.28571px);
       }
     }
   }

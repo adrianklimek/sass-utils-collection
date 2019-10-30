@@ -16,15 +16,15 @@
 ///
 ///  // Output
 ///  .el-1 {
-///    font-size: calc(0.0178571429vw + 10.2857142857px);
+///    font-size: calc(1.78571429vw + 10.2857142857px);
 ///  }
 ///
 ///  .el-2 {
-///    font-size: calc(0.0178571429vh + 10.2857142857px);
+///    font-size: calc(1.78571429vh + 10.2857142857px);
 ///  }
 @function fluid-value($from, $to, $media-from, $media-to, $unit: vw) {
   $a: ($to - $from) / ($media-to - $media-from);
   $b: $from - $a * $media-from;
 
-  @return calc(#{$a + $unit} + #{$b});
+  @return calc(#{$a * 100 + $unit} + #{$b});
 }
