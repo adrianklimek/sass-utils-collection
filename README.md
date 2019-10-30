@@ -980,40 +980,26 @@ Applies visually hidden utility — https://a11yproject.com/posts/how-to-hide-co
   @include visually-hidden;
 }
 .el-2 {
-  @include visually-hidden;
+  @include visually-hidden($focusable: true);
 }
 
 // Output
 .el-1 {
-  position: absolute;
-
-  width: 1px;
+  position: absolute !important;
   height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-
-  white-space: nowrap;
-
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
+  width: 1px;
   overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
 }
 
 .el-2:not(:focus):not(:active) {
-  position: absolute;
-
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-
-  white-space: nowrap;
-
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+  position: absolute !important;
+   height: 1px;
+   width: 1px;
+   overflow: hidden;
+   clip: rect(1px, 1px, 1px, 1px);
+   white-space: nowrap;
 }
 ```
 
