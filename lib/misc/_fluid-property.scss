@@ -7,6 +7,44 @@
 /// @param {number} $media-from
 /// @param {number} $media-to
 /// @param {number} $media-type [width] - `width` or `height`
+/// @example scss
+///  // Usage
+///  .el-1 {
+///    @include fluid-property(font-size, 10px, 23px, 375px, 1440px);
+///  }
+///
+///  .el-2 {
+///    @include fluid-property(height, 100px, 200px, 768px, 1280px, height);
+///  }
+///
+///  // Output
+///  .el-1 {
+///    font-size: 10px;
+///  }
+///  @media (min-width: 375px) {
+///    .el-1 {
+///      font-size: calc(1.22066vw + 5.42254px);
+///    }
+///  }
+///  @media (min-width: 1440px) {
+///    .el-1 {
+///      font-size: 23px;
+//     }
+///  }
+///
+///  .el-2 {
+///    height: 100px;
+///  }
+///  @media (min-width: 375px) {
+///    .el-2 {
+///      height: calc(19.53125vh + -50px);
+///    }
+///  }
+///  @media (min-width: 1440px) {
+///    .el-2 {
+///      height: 200px;
+//     }
+///  }
 @mixin fluid-property($property, $from, $to, $media-from, $media-to, $media-type: width) {
   $unit: if($media-type == width, vw, vh);
 
