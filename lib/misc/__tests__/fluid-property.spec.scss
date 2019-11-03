@@ -9,18 +9,12 @@
       }
 
       @include expect {
-        & {
-          width: 10px;
-        }
+        width: 10px;
         @media (min-width: 375px) {
-          & {
-            width: calc(1.22066vw + 5.42254px);
-          }
+          width: calc(1.22066vw + 5.42254px);
         }
         @media (min-width: 1440px) {
-          & {
-            width: 23px;
-          }
+          width: 23px;
         }
       }
     }
@@ -33,18 +27,12 @@
       }
 
       @include expect {
-        & {
-          height: 100px;
-        }
+        height: 100px;
         @media (min-height: 768px) {
-          & {
-            height: calc(19.53125vh + -50px);
-          }
+          height: calc(19.53125vh + -50px);
         }
         @media (min-height: 1280px) {
-          & {
-            height: 200px;
-          }
+          height: 200px;
         }
       }
     }
