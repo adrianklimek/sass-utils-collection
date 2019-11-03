@@ -1,0 +1,30 @@
+@import '../layout/media';
+
+/// Sets a property for multiple breakpoints
+/// @param {string} $property
+/// @param {map} $values [()]
+/// @example scss
+///  // Usage
+///  .el-1 {
+///    @include media-property(font-size, (xs: 12px, md: 14px, lg: 16px));
+///  }
+///
+///  // Output
+///  .el-1 {
+///    font-size: 12px;
+///
+///    @media (min-width: 768px) {
+///      font-size: 14px;
+///    }
+///
+///    @media (min-width: 1170px) {
+///      font-size: 16px;
+///    }
+///  }
+@mixin media-property($property, $values: ()) {
+  @each $breakpoint-name, $value in $values {
+    @include media-up($breakpoint-name) {
+      #{$property}: $value;
+    }
+  }
+}
