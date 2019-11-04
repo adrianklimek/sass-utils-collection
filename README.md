@@ -640,7 +640,6 @@ Sets width to height size ratio
 | ---- | ---- | ------- | ----------- |
 |width|number|1|-|
 |height|number|1|-|
-|content-selector|string|null|used only when `$grow` parameter is set to `false`|
 |grow|boolean|false|allows content to increase element size when content takes more space|
 ##### Example 
 ```scss
@@ -650,43 +649,30 @@ Sets width to height size ratio
 }
 
 .el-2 {
-  @include aspect-ratio(16, 9, '.content');
-}
-
-.el-3 {
-  @include aspect-ratio(4, 3, $grow: true);
+  @include aspect-ratio(4, 3, true);
 }
 
 // Output
 .el-1 {
   position: relative;
+}
+.el-1::before {
+  content: '';
+  display: block;
   padding-top: 0.5625%;
 }
 
-.el-2 {
-  position: relative;
-  padding-top: 0.5625%;
-}
-
-.el-2 .content {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-.el-3::before,
-.el-3::after {
+.el-2::before,
+.el-2::after {
   content: '';
 }
 
-.el-3::before {
+.el-2::before {
   padding-top: 75%;
   float: left;
 }
 
-.el-3::after {
+.el-2::after {
   display: block;
   clear: both;
 }

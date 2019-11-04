@@ -10,7 +10,12 @@
 
       @include contains {
         position: relative;
-        padding-top: 100%;
+
+        &::before {
+          content: '';
+          display: block;
+          padding-top: 100%;
+        }
       }
     }
   }
@@ -18,10 +23,10 @@
   @include it('allows element to grow when content takes more space than element size') {
     @include assert {
       @include output {
-        @include aspect-ratio(1, 1, $grow: true)
+        @include aspect-ratio(1, 1, true)
       }
 
-      @include contains {
+      @include expect {
         &::before,
         &::after {
           content: '';
@@ -46,25 +51,13 @@
         @include aspect-ratio(16, 9)
       }
 
-      @include contains {
-        padding-top: 56.25%;
-      }
-    }
-  }
+      @include expect {
+        position: relative;
 
-  @include it('add styles to content element') {
-    @include assert {
-      @include output {
-        @include aspect-ratio(16, 9, '.content')
-      }
-
-      @include contains {
-        .content {
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
+        &::before {
+          content: '';
+          display: block;
+          padding-top: 56.25%;
         }
       }
     }
