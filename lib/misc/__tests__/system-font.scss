@@ -1,0 +1,16 @@
+@import '../../test';
+@import '../system-font';
+
+@include describe('[mixin] system-font') {
+  @include it('sets font family to system\'s default one') {
+    @include assert {
+      @include output {
+        @include system-font;
+      }
+
+      @include expect {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+      }
+    }
+  }
+}

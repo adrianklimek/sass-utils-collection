@@ -1,0 +1,38 @@
+/// Turns a text sideways
+/// @param {boolean} $bottom-to-top [false]
+/// @param {string} $align [left]
+/// @example scss
+///  // Usage
+///  .el-1 {
+///    @include sideways-text;
+///  }
+///
+///  .el-2 {
+///    @include sideways-text(true);
+///  }
+///
+///  .el-3 {
+///    @include sideways-text(true, right);
+///  }
+///
+///  // Output
+///  .el-1 {
+///    writing-mode: vertical-lr;
+///  }
+///
+///  .el-2 {
+///    writing-mode: vertical-rl;
+///    transform: scale(-1);
+///  }
+///
+///  .el-3 {
+///    writing-mode: vertical-lr;
+///    transform: scale(-1);
+///  }
+@mixin sideways-text($bottom-to-top: false, $align: left) {
+  $left-to-right: if($bottom-to-top, vertical-rl, vertical-lr);
+  $right-to-left: if($bottom-to-top, vertical-lr, vertical-rl);
+
+  writing-mode: if($align == left, $left-to-right, $right-to-left);
+  transform: if($bottom-to-top, scale(-1), null);
+}

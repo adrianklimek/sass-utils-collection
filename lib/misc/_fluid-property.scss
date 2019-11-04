@@ -1,0 +1,60 @@
+@import './fluid-value';
+
+/// Returns property with fluid value based on viewport size
+/// @param {string} $property
+/// @param {number} $from
+/// @param {number} $to
+/// @param {number} $media-from
+/// @param {number} $media-to
+/// @param {number} $media-type [width] - `width` or `height`
+/// @example scss
+///  // Usage
+///  .el-1 {
+///    @include fluid-property(font-size, 10px, 23px, 375px, 1440px);
+///  }
+///
+///  .el-2 {
+///    @include fluid-property(height, 100px, 200px, 768px, 1280px, height);
+///  }
+///
+///  // Output
+///  .el-1 {
+///    font-size: 10px;
+///  }
+///  @media (min-width: 375px) {
+///    .el-1 {
+///      font-size: calc(1.22066vw + 5.42254px);
+///    }
+///  }
+///  @media (min-width: 1440px) {
+///    .el-1 {
+///      font-size: 23px;
+///     }
+///  }
+///
+///  .el-2 {
+///    height: 100px;
+///  }
+///  @media (min-height: 768px) {
+///    .el-2 {
+///      height: calc(19.53125vh + -50px);
+///    }
+///  }
+///  @media (min-height: 1280px) {
+///    .el-2 {
+///      height: 200px;
+///    }
+///  }
+@mixin fluid-property($property, $from, $to, $media-from, $media-to, $media-type: width) {
+  $unit: if($media-type == width, vw, vh);
+
+  #{$property}: $from;
+
+  @media (min-#{$media-type}: #{$media-from}) {
+    #{$property}: fluid-value($from, $to, $media-from, $media-to, $unit);
+  }
+
+  @media (min-#{$media-type}: #{$media-to}) {
+    #{$property}: $to;
+  }
+}

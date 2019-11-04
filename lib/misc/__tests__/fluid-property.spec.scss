@@ -1,0 +1,40 @@
+@import '../../test';
+@import '../fluid-property';
+
+@include describe('[mixin] fluid-property') {
+  @include it('returns fluid property with `width` media type as default') {
+    @include assert {
+      @include output {
+        @include fluid-property(width, 10px, 23px, 375px, 1440px);
+      }
+
+      @include expect {
+        width: 10px;
+        @media (min-width: 375px) {
+          width: calc(1.22066vw + 5.42254px);
+        }
+        @media (min-width: 1440px) {
+          width: 23px;
+        }
+      }
+    }
+  }
+
+  @include it('returns fluid property with `height` media type') {
+    @include assert {
+      @include output {
+        @include fluid-property(height, 100px, 200px, 768px, 1280px, height);
+      }
+
+      @include expect {
+        height: 100px;
+        @media (min-height: 768px) {
+          height: calc(19.53125vh + -50px);
+        }
+        @media (min-height: 1280px) {
+          height: 200px;
+        }
+      }
+    }
+  }
+}
