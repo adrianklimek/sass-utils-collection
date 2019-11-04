@@ -39,16 +39,19 @@
         2. [clearfix](#clearfix)
         3. [dynamic-shadow](#dynamic-shadow)
         4. [enable-kerning](#enable-kerning)
-        5. [fluid-value](#fluid-value)
-        6. [font-smoothing](#font-smoothing)
-        7. [prefix](#prefix)
-        8. [property](#property)
-        9. [random-color](#random-color)
-        10. [responsive-img](#responsive-img)
-        11. [size](#size)
-        12. [system-font](#system-font)
-        13. [truncate-line](#truncate-line)
-        14. [visually-hidden](#visually-hidden)
+        5. [fluid-property](#fluid-property)
+        6. [fluid-value](#fluid-value)
+        7. [font-smoothing](#font-smoothing)
+        8. [media-property](#media-property)
+        9. [prefix](#prefix)
+        10. [property](#property)
+        11. [random-color](#random-color)
+        12. [responsive-img](#responsive-img)
+        13. [sideways-text](#sideways-text)
+        14. [size](#size)
+        15. [system-font](#system-font)
+        16. [truncate-line](#truncate-line)
+        17. [visually-hidden](#visually-hidden)
 5. [License](#license)
 
 ## Installation
@@ -767,6 +770,60 @@ Enables font kerning — improves spacing and fit of specific pairs of letters
   -moz-osx-font-smoothing: grayscale;
 }
 ```
+#### fluid-property
+*type: mixin*
+
+Returns property with fluid value based on viewport size
+
+##### Parameters
+| name | type | default | description |
+| ---- | ---- | ------- | ----------- |
+|property|string|-|-|
+|from|number|-|-|
+|to|number|-|-|
+|media-from|number|-|-|
+|media-to|number|-|-|
+|media-type|number|width|`width` or `height`|
+##### Example 
+```scss
+// Usage
+.el-1 {
+  @include fluid-property(font-size, 10px, 23px, 375px, 1440px);
+}
+
+.el-2 {
+  @include fluid-property(height, 100px, 200px, 768px, 1280px, height);
+}
+
+// Output
+.el-1 {
+  font-size: 10px;
+}
+@media (min-width: 375px) {
+  .el-1 {
+    font-size: calc(1.22066vw + 5.42254px);
+  }
+}
+@media (min-width: 1440px) {
+  .el-1 {
+    font-size: 23px;
+   }
+}
+
+.el-2 {
+  height: 100px;
+}
+@media (min-width: 375px) {
+  .el-2 {
+    height: calc(19.53125vh + -50px);
+  }
+}
+@media (min-width: 1440px) {
+  .el-2 {
+    height: 200px;
+  }
+}
+```
 #### fluid-value
 *type: function*
 
@@ -793,11 +850,11 @@ Returns fluid value based on viewport size
 
 // Output
 .el-1 {
-  font-size: calc(0.0178571429vw + 10.2857142857px);
+  font-size: calc(1.78571429vw + 10.2857142857px);
 }
 
 .el-2 {
-  font-size: calc(0.0178571429vh + 10.2857142857px);
+  font-size: calc(1.78571429vh + 10.2857142857px);
 }
 ```
 #### font-smoothing
@@ -816,6 +873,36 @@ Enables anti-aliasing effect
 .el {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+```
+#### media-property
+*type: mixin*
+
+Sets a property for multiple breakpoints
+
+##### Parameters
+| name | type | default | description |
+| ---- | ---- | ------- | ----------- |
+|property|string|-|-|
+|values|map|()|-|
+##### Example 
+```scss
+// Usage
+.el-1 {
+  @include media-property(font-size, (xs: 12px, md: 14px, lg: 16px));
+}
+
+// Output
+.el-1 {
+  font-size: 12px;
+
+  @media (min-width: 768px) {
+    font-size: 14px;
+  }
+
+  @media (min-width: 1170px) {
+    font-size: 16px;
+  }
 }
 ```
 #### prefix
@@ -912,6 +999,46 @@ Makes an image responsive
 .el {
   width: 100%;
   display: block;
+}
+```
+#### sideways-text
+*type: mixin*
+
+Turns a text sideways
+
+##### Parameters
+| name | type | default | description |
+| ---- | ---- | ------- | ----------- |
+|bottom-to-top|boolean|false|-|
+|align|string|left|-|
+##### Example 
+```scss
+// Usage
+.el-1 {
+  @include sideways-text;
+}
+
+.el-2 {
+  @include sideways-text(true);
+}
+
+.el-3 {
+  @include sideways-text(true, right);
+}
+
+// Output
+.el-1 {
+  writing-mode: vertical-lr;
+}
+
+.el-2 {
+  writing-mode: vertical-rl;
+  transform: scale(-1);
+}
+
+.el-3 {
+  writing-mode: vertical-lr;
+  transform: scale(-1);
 }
 ```
 #### size

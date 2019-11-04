@@ -29,7 +29,7 @@
 ///  @media (min-width: 1440px) {
 ///    .el-1 {
 ///      font-size: 23px;
-//     }
+///     }
 ///  }
 ///
 ///  .el-2 {
@@ -43,7 +43,7 @@
 ///  @media (min-width: 1440px) {
 ///    .el-2 {
 ///      height: 200px;
-//     }
+///    }
 ///  }
 @mixin fluid-property($property, $from, $to, $media-from, $media-to, $media-type: width) {
   $unit: if($media-type == width, vw, vh);
