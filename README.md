@@ -813,12 +813,12 @@ Returns property with fluid value based on viewport size
 .el-2 {
   height: 100px;
 }
-@media (min-width: 375px) {
+@media (min-height: 768px) {
   .el-2 {
     height: calc(19.53125vh + -50px);
   }
 }
-@media (min-width: 1440px) {
+@media (min-height: 1280px) {
   .el-2 {
     height: 200px;
   }
