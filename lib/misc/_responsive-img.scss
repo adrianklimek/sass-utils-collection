@@ -1,12 +1,12 @@
 /// Makes an image responsive
 /// @example scss
 ///  // Usage
-///  .el {
+///  .element {
 ///    @include responsive-img;
 ///  }
 ///
 ///  // Output
-///  .el {
+///  .element {
 ///    width: 100%;
 ///    display: block;
 ///  }

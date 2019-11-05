@@ -1,12 +1,12 @@
 /// Enables anti-aliasing effect
 /// @example scss
 ///  // Usage
-///  .el {
+///  .element {
 ///    @include font-smoothing;
 ///  }
 ///
 ///  // Output
-///  .el {
+///  .element {
 ///    -webkit-font-smoothing: antialiased;
 ///    -moz-osx-font-smoothing: grayscale;
 ///  }

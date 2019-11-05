@@ -2,20 +2,20 @@
 /// @param {number} $alpha [1]
 /// @example scss
 ///  // Usage
-///  .el-1 {
+///  .element-1 {
 ///    background-color: random-color();
 ///  }
 ///
-///  .el-2 {
+///  .element-2 {
 ///    background-color: random-color(0.8);
 ///  }
 ///
 ///  // Output
-///  .el-1 {
+///  .element-1 {
 ///    background-color: #8399f2;
 ///  }
 ///
-///  .el-2 {
+///  .element-2 {
 ///    background-color: rgba(218, 230, 202, 0.8);
 ///  }
 @function random-color($alpha: 1) {

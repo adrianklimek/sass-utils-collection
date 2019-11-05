@@ -2,15 +2,15 @@
 /// @param {boolean} $focusable [false]
 /// @example scss
 ///  // Usage
-///  .el-1 {
+///  .element-1 {
 ///    @include visually-hidden;
 ///  }
-///  .el-2 {
+///  .element-2 {
 ///    @include visually-hidden($focusable: true);
 ///  }
 ///
 ///  // Output
-///  .el-1 {
+///  .element-1 {
 ///    position: absolute !important;
 ///    height: 1px;
 ///    width: 1px;
@@ -19,7 +19,7 @@
 ///    white-space: nowrap;
 ///  }
 ///
-///  .el-2:not(:focus):not(:active) {
+///  .element-2:not(:focus):not(:active) {
 ///    position: absolute !important;
 ///     height: 1px;
 ///     width: 1px;

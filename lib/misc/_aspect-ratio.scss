@@ -4,35 +4,35 @@
 /// @param {boolean} $grow [false] - allows content to increase element size when content takes more space
 /// @example scss
 ///  // Usage
-///  .el-1 {
+///  .element-1 {
 ///    @include aspect-ratio(16, 9);
 ///  }
 ///
-///  .el-2 {
+///  .element-2 {
 ///    @include aspect-ratio(4, 3, true);
 ///  }
 ///
 ///  // Output
-///  .el-1 {
+///  .element-1 {
 ///    position: relative;
 ///  }
-///  .el-1::before {
+///  .element-1::before {
 ///    content: '';
 ///    display: block;
 ///    padding-top: 0.5625%;
 ///  }
 ///
-///  .el-2::before,
-///  .el-2::after {
+///  .element-2::before,
+///  .element-2::after {
 ///    content: '';
 ///  }
 ///
-///  .el-2::before {
+///  .element-2::before {
 ///    padding-top: 75%;
 ///    float: left;
 ///  }
 ///
-///  .el-2::after {
+///  .element-2::after {
 ///    display: block;
 ///    clear: both;
 ///  }

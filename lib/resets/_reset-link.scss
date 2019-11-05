@@ -2,12 +2,12 @@
 /// @param {string} $color [inherit]
 /// @example scss
 ///  // Usage
-///  .el {
+///  .element {
 ///    @include reset-link;
 ///  }
 ///
 ///  // Output
-///  .el {
+///  .element {
 ///    text-decoration: none;
 ///    color: inherit;
 ///  }

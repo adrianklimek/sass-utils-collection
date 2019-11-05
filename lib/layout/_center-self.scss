@@ -3,23 +3,23 @@
 /// @param {string} $position [absolute]
 /// @example scss
 ///  // Usage
-///  .el-1 {
+///  .element-1 {
 ///    @include center-self;
 ///  }
 ///
-///  .el-2 {
+///  .element-2 {
 ///    @include center-self(vertically, relative);
 ///  }
 ///
 ///  // Output
-///  .el-1 {
+///  .element-1 {
 ///    position: absolute;
 ///    top: 50%;
 ///    left: 50%;
 ///    transform: translate(-50%, -50%)
 ///  }
 ///
-///  .el-2 {
+///  .element-2 {
 ///    position: relative;
 ///    top: 50%;
 ///    transform: translate(0, -50%)

@@ -148,23 +148,23 @@ Centers an element's content
 ##### Example 
 ```scss
 // Usage
-.el-1 {
+.element-1 {
   @include center-content;
 }
 
-.el-2 {
+.element-2 {
   @include center-content(vertically);
 }
 
 // Output
-.el-1 {
+.element-1 {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 
-.el-2 {
+.element-2 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -183,23 +183,23 @@ Centers an element
 ##### Example 
 ```scss
 // Usage
-.el-1 {
+.element-1 {
   @include center-self;
 }
 
-.el-2 {
+.element-2 {
   @include center-self(vertically, relative);
 }
 
 // Output
-.el-1 {
+.element-1 {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%)
 }
 
-.el-2 {
+.element-2 {
   position: relative;
   top: 50%;
   transform: translate(0, -50%)
@@ -218,16 +218,16 @@ Stretch an element to fill its parent
 ##### Example 
 ```scss
 // Usage
-.el-1 {
+.element-1 {
   @include fill-space;
 }
 
-.el-2 {
+.element-2 {
   @include fill-space(80%, relative);
 }
 
 // Output
-.el-1 {
+.element-1 {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -235,7 +235,7 @@ Stretch an element to fill its parent
   left: 0;
 }
 
-.el-2 {
+.element-2 {
   position: relative;
   width: 80%;
   height: 80%;
@@ -321,23 +321,23 @@ Hides element on a screen resolution equal or greater than given one
 ##### Example 
 ```scss
 // Usage
-.el-1 {
+.element-1 {
   @include hide-up(md);
 }
 
-.el-2 {
+.element-2 {
   @include hide-up($width: 1044px);
 }
 
 // Output
 @media (min-width: 768px) {
-  .el-1 {
+  .element-1 {
     display: none;
   }
 }
 
 @media (min-width: 1044px) {
-  .el-2 {
+  .element-2 {
     display: none;
   }
 }
@@ -355,11 +355,11 @@ Hides element on a screen resolution smaller than given one
 ##### Example 
 ```scss
 // Usage
-.el-1 {
+.element-1 {
   @include hide-down(md);
 }
 
-.el-2 {
+.element-2 {
   @include hide-down($width: 1044px);
 }
 
