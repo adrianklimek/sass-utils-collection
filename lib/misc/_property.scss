@@ -3,12 +3,12 @@
 /// @param {string} $properties... - any number of arguments with properties
 /// @example scss
 ///  // Usage
-///  .el {
+///  .element {
 ///    @include property(inherit, background-color, color, font);
 ///  }
 ///
 ///  // Output
-///  .el {
+///  .element {
 ///    background-color: inherit;
 ///    colo: inherit;
 ///    font: inherit;

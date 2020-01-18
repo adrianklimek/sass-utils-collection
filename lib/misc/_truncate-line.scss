@@ -1,12 +1,12 @@
 /// Truncates one line text
 /// @example scss
 ///  // Usage
-///  .el {
+///  .element {
 ///    @include truncate-line;
 ///  }
 ///
 ///  // Output
-///  .el {
+///  .element {
 ///    overflow: hidden;
 ///    white-space: nowrap;
 ///    text-overflow: ellipsis;

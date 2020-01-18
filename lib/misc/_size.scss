@@ -3,21 +3,21 @@
 /// @param {string} $height [] - if not supplied `width` parameter is used instead
 /// @example scss
 ///  // Usage
-///  .el-1 {
+///  .element-1 {
 ///    @include size(200px);
 ///  }
 ///
-///  .el-2 {
+///  .element-2 {
 ///    @include size(100%, 200px);
 ///  }
 ///
 ///  // Output
-///  .el-1 {
+///  .element-1 {
 ///    width: 200px;
 ///    height: 200px;
 ///  }
 ///
-///  .el-2 {
+///  .element-2 {
 ///    width: 100%;
 ///    height: 200px;
 ///  }

@@ -1,12 +1,12 @@
 /// Forces an element to self-clear its children
 /// @example scss
 ///  // Usage
-///  .el {
+///  .element {
 ///    @include clearfix;
 ///  }
 ///
 ///  // Output
-///  .el::after {
+///  .element::after {
 ///    content: '';
 ///    display: table;
 ///    clear: both;

@@ -1,12 +1,12 @@
 /// Enables font kerning — improves spacing and fit of specific pairs of letters
 /// @example scss
 ///  // Usage
-///  .el {
+///  .element {
 ///    @include enable-kerning;
 ///  }
 ///
 ///  // Output
-///  .el {
+///  .element {
 ///    -webkit-font-smoothing: antialiased;
 ///    -moz-osx-font-smoothing: grayscale;
 ///  }

@@ -3,12 +3,12 @@
 /// Resets the appearance property
 /// @example scss
 ///  // Usage
-///  .el {
+///  .element {
 ///    @include reset-appearance;
 ///  }
 ///
 ///  // Output
-///  .el {
+///  .element {
 ///    -webkit-appearance: none;
 ///    -moz-appearance: none;
 ///  }

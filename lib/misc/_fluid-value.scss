@@ -6,20 +6,20 @@
 /// @param {number} $unit [vw] - `vw` or `vh`
 /// @example scss
 ///  // Usage
-///  .el-1 {
+///  .element-1 {
 ///    font-size: fluid-value(16px, 24px, 320px, 768px);
 ///  }
 ///
-///  .el-2 {
+///  .element-2 {
 ///    font-size: fluid-value(16px, 24px, 320px, 768px, vh);
 ///  }
 ///
 ///  // Output
-///  .el-1 {
+///  .element-1 {
 ///    font-size: calc(1.78571429vw + 10.2857142857px);
 ///  }
 ///
-///  .el-2 {
+///  .element-2 {
 ///    font-size: calc(1.78571429vh + 10.2857142857px);
 ///  }
 @function fluid-value($from, $to, $media-from, $media-to, $unit: vw) {

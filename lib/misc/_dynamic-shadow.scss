@@ -5,17 +5,17 @@
 /// @param {number} $opacity [0.75]
 /// @example scss
 ///  // Usage
-///  .el {
+///  .element {
 ///    @include dynamic-shadow(20px, 20px, 5px);
 ///  }
 ///
 ///  // Output
-///  .el {
+///  .element {
 ///    position: relative;
 ///    z-index: 1;
 ///  }
 ///
-///  .el::after {
+///  .element::after {
 ///    content: '';
 ///    position: absolute;
 ///    top: 20px;

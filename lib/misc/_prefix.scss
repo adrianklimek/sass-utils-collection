@@ -4,12 +4,12 @@
 /// @param {string} $prefixes... - any number of arguments with prefixes
 /// @example scss
 ///  // Usage
-///  .el {
+///  .element {
 ///    @include prefix(appearance, none, moz, webkit);
 ///  }
 ///
 ///  // Output
-///  .el {
+///  .element {
 ///    -moz-appearance: none;
 ///    -webkit-appearance: none;
 ///    appearance: none;
