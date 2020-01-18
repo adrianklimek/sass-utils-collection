@@ -365,13 +365,13 @@ Hides element on a screen resolution smaller than given one
 
 // Output
 @media (max-width: 767px) {
-  .el-1 {
+  .element-1 {
     display: none;
   }
 }
 
 @media (max-width: 1043px) {
-  .el-2 {
+  .element-2 {
     display: none;
   }
 }
@@ -401,13 +401,13 @@ Applies styles to screen resolutions equal or greater than given one
 ##### Example 
 ```scss
 // Usage
-.el-1 {
+.element-1 {
   @include media-up(md) {
     width: 50%;
   }
 }
 
-.el-2 {
+.element-2 {
   @include media-up($width: 1500px) {
     width: 1000px;
   }
@@ -415,13 +415,13 @@ Applies styles to screen resolutions equal or greater than given one
 
 // Output
 @media (min-width: 768px) {
-  .el-1 {
+  .element-1 {
     width: 50%;
   }
 }
 
 @media (min-width: 1500px) {
-  .el-2 {
+  .element-2 {
     width: 1000px;
   }
 }
@@ -439,13 +439,13 @@ Applies styles to screen resolutions smaller than given one
 ##### Example 
 ```scss
 // Usage
-.el-1 {
+.element-1 {
   @include media-down(md) {
     width: 100%;
   }
 }
 
-.el-2 {
+.element-2 {
   @include media-down($width: 1500px) {
     width: 500px;
   }
@@ -453,13 +453,13 @@ Applies styles to screen resolutions smaller than given one
 
 // Output
 @media (max-width: 767px) {
-  .el-1 {
+  .element-1 {
     width: 100%;
   }
 }
 
 @media (max-width: 1499px) {
-  .el-2 {
+  .element-2 {
     width: 500px;
   }
 }
@@ -478,18 +478,18 @@ Note: for cross-browser support additional code may be needed: https://github.co
 ##### Example 
 ```scss
 // Usage
-.el {
-  @include sticky-footer(.content);
+.element {
+  @include sticky-footer('.content');
 }
 
 // Output
-.el {
+.element {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-.el .content {
+.element .content {
   flex: 1;
 }
 ```
@@ -503,12 +503,12 @@ Resets the appearance property
 ##### Example 
 ```scss
 // Usage
-.el {
+.element {
   @include reset-appearance;
 }
 
 // Output
-.el {
+.element {
   -webkit-appearance: none;
   -moz-appearance: none;
 }
@@ -551,12 +551,12 @@ Resets a button's default styles
 ##### Example 
 ```scss
 // Usage
-.el {
+.element {
   @include reset-input;
 }
 
 // Output
-.el {
+.element {
   background: none;
   background-clip: content-box;
 
@@ -581,12 +581,12 @@ Resets a link's default styles
 ##### Example 
 ```scss
 // Usage
-.el {
+.element {
   @include reset-link;
 }
 
 // Output
-.el {
+.element {
   text-decoration: none;
   color: inherit;
 }
@@ -599,12 +599,12 @@ Resets a list's default styles
 ##### Example 
 ```scss
 // Usage
-.el {
+.element {
   @include reset-list;
 }
 
 // Output
-.el {
+.element {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -618,12 +618,12 @@ Resets a placeholder's default style
 ##### Example 
 ```scss
 // Usage
-.el {
+.element {
   @include reset-placeholder;
 }
 
 // Output
-.el::placeholder {
+.element::placeholder {
   opacity: 1;
   color: inherit;
 }
@@ -644,35 +644,35 @@ Sets width to height size ratio
 ##### Example 
 ```scss
 // Usage
-.el-1 {
+.element-1 {
   @include aspect-ratio(16, 9);
 }
 
-.el-2 {
+.element-2 {
   @include aspect-ratio(4, 3, true);
 }
 
 // Output
-.el-1 {
+.element-1 {
   position: relative;
 }
-.el-1::before {
+.element-1::before {
   content: '';
   display: block;
   padding-top: 0.5625%;
 }
 
-.el-2::before,
-.el-2::after {
+.element-2::before,
+.element-2::after {
   content: '';
 }
 
-.el-2::before {
+.element-2::before {
   padding-top: 75%;
   float: left;
 }
 
-.el-2::after {
+.element-2::after {
   display: block;
   clear: both;
 }
@@ -685,12 +685,12 @@ Forces an element to self-clear its children
 ##### Example 
 ```scss
 // Usage
-.el {
+.element {
   @include clearfix;
 }
 
 // Output
-.el::after {
+.element::after {
   content: '';
   display: table;
   clear: both;
@@ -711,17 +711,17 @@ Creates shadow based on an element's background
 ##### Example 
 ```scss
 // Usage
-.el {
+.element {
   @include dynamic-shadow(20px, 20px, 5px);
 }
 
 // Output
-.el {
+.element {
   position: relative;
   z-index: 1;
 }
 
-.el::after {
+.element::after {
   content: '';
   position: absolute;
   top: 20px;
@@ -746,12 +746,12 @@ Enables font kerning — improves spacing and fit of specific pairs of letters
 ##### Example 
 ```scss
 // Usage
-.el {
+.element {
   @include enable-kerning;
 }
 
 // Output
-.el {
+.element {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -826,20 +826,20 @@ Returns fluid value based on viewport size
 ##### Example 
 ```scss
 // Usage
-.el-1 {
+.element-1 {
   font-size: fluid-value(16px, 24px, 320px, 768px);
 }
 
-.el-2 {
+.element-2 {
   font-size: fluid-value(16px, 24px, 320px, 768px, vh);
 }
 
 // Output
-.el-1 {
+.element-1 {
   font-size: calc(1.78571429vw + 10.2857142857px);
 }
 
-.el-2 {
+.element-2 {
   font-size: calc(1.78571429vh + 10.2857142857px);
 }
 ```
@@ -851,12 +851,12 @@ Enables anti-aliasing effect
 ##### Example 
 ```scss
 // Usage
-.el {
+.element {
   @include font-smoothing;
 }
 
 // Output
-.el {
+.element {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -905,12 +905,12 @@ Applies prefixes to given property
 ##### Example 
 ```scss
 // Usage
-.el {
+.element {
   @include prefix(appearance, none, moz, webkit);
 }
 
 // Output
-.el {
+.element {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
@@ -929,12 +929,12 @@ Sets the same value to multiple properties
 ##### Example 
 ```scss
 // Usage
-.el {
+.element {
   @include property(inherit, background-color, color, font);
 }
 
 // Output
-.el {
+.element {
   background-color: inherit;
   colo: inherit;
   font: inherit;
@@ -952,20 +952,20 @@ Generates random rgba color
 ##### Example 
 ```scss
 // Usage
-.el-1 {
+.element-1 {
   background-color: random-color();
 }
 
-.el-2 {
+.element-2 {
   background-color: random-color(0.8);
 }
 
 // Output
-.el-1 {
+.element-1 {
   background-color: #8399f2;
 }
 
-.el-2 {
+.element-2 {
   background-color: rgba(218, 230, 202, 0.8);
 }
 ```
@@ -977,12 +977,12 @@ Makes an image responsive
 ##### Example 
 ```scss
 // Usage
-.el {
+.element {
   @include responsive-img;
 }
 
 // Output
-.el {
+.element {
   width: 100%;
   display: block;
 }
@@ -1040,21 +1040,21 @@ Sets width and height
 ##### Example 
 ```scss
 // Usage
-.el-1 {
+.element-1 {
   @include size(200px);
 }
 
-.el-2 {
+.element-2 {
   @include size(100%, 200px);
 }
 
 // Output
-.el-1 {
+.element-1 {
   width: 200px;
   height: 200px;
 }
 
-.el-2 {
+.element-2 {
   width: 100%;
   height: 200px;
 }
@@ -1084,12 +1084,12 @@ Truncates one line text
 ##### Example 
 ```scss
 // Usage
-.el {
+.element {
   @include truncate-line;
 }
 
 // Output
-.el {
+.element {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -1107,15 +1107,15 @@ Applies visually hidden utility — https://a11yproject.com/posts/how-to-hide-co
 ##### Example 
 ```scss
 // Usage
-.el-1 {
+.element-1 {
   @include visually-hidden;
 }
-.el-2 {
+.element-2 {
   @include visually-hidden($focusable: true);
 }
 
 // Output
-.el-1 {
+.element-1 {
   position: absolute !important;
   height: 1px;
   width: 1px;
@@ -1124,7 +1124,7 @@ Applies visually hidden utility — https://a11yproject.com/posts/how-to-hide-co
   white-space: nowrap;
 }
 
-.el-2:not(:focus):not(:active) {
+.element-2:not(:focus):not(:active) {
   position: absolute !important;
    height: 1px;
    width: 1px;
