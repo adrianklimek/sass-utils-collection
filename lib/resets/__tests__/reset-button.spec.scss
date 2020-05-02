@@ -2,7 +2,7 @@
 @import '../reset-button';
 
 @include describe('[mixin] reset-button') {
-  @include it('removes `background`, `border`, `border-radius`, `outline`, `padding` and sets `color`, `font` to `inherit`') {
+  @include it('removes button\'s default styles') {
     @include assert {
       @include output {
         @include reset-button;
@@ -17,6 +17,10 @@
         color: inherit;
         font: inherit;
         cursor: pointer;
+
+        &::-moz-focus-inner {
+          border: 0;
+        }
       }
     }
   }

@@ -2,7 +2,7 @@
 @import '../reset-list';
 
 @include describe('[mixin] reset-list') {
-  @include it('removes `list-style`, `margin` and `padding` properties') {
+  @include it('removes default styles of a list') {
     @include assert {
       @include output {
         @include reset-list;
