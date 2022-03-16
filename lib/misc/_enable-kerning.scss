@@ -8,7 +8,7 @@
 ///  // Output
 ///  .element {
 ///    font-feature-settings: 'kern' 1;
-//     text-rendering: optimizeLegibility;
+///    text-rendering: optimizeLegibility;
 ///  }
 @mixin enable-kerning {
   font-feature-settings: 'kern' 1;
