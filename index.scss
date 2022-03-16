@@ -8,7 +8,6 @@
 
 // Layout
 @import './lib/layout/media';
-@import 'lib/layout/flexbox-grid';
 @import './lib/layout/hide';
 @import './lib/layout/sticky-footer';
 @import './lib/layout/center-self';
@@ -29,3 +28,8 @@
 @import './lib/misc/property';
 @import './lib/misc/size';
 @import './lib/misc/fluid-value';
+@import './lib/misc/system-font';
+@import './lib/misc/sideways-text';
+@import './lib/misc/media-property';
+@import './lib/misc/fluid-property';
+
