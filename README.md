@@ -1,4 +1,5 @@
 
+![License](https://img.shields.io/npm/l/sass-utils-collection)
 # Sass utils collection
 :zap: A collection of sass mixins and functions 
 
@@ -38,20 +39,25 @@
       1. [aspect-ratio](#aspect-ratio)
         2. [clearfix](#clearfix)
         3. [dynamic-shadow](#dynamic-shadow)
-        4. [enable-kerning](#enable-kerning)
-        5. [fluid-property](#fluid-property)
-        6. [fluid-value](#fluid-value)
-        7. [font-smoothing](#font-smoothing)
-        8. [media-property](#media-property)
-        9. [prefix](#prefix)
-        10. [property](#property)
-        11. [random-color](#random-color)
-        12. [responsive-img](#responsive-img)
-        13. [sideways-text](#sideways-text)
-        14. [size](#size)
-        15. [system-font](#system-font)
-        16. [truncate-line](#truncate-line)
-        17. [visually-hidden](#visually-hidden)
+        4. [//     text-rendering: optimizeLegibility;
+        ///  }
+        @mixin enable-kerning](#//     text-rendering: optimizeLegibility;
+        ///  }
+        @mixin enable-kerning)
+        5. [enable-kerning](#enable-kerning)
+        6. [fluid-property](#fluid-property)
+        7. [fluid-value](#fluid-value)
+        8. [font-smoothing](#font-smoothing)
+        9. [media-property](#media-property)
+        10. [prefix](#prefix)
+        11. [property](#property)
+        12. [random-color](#random-color)
+        13. [responsive-img](#responsive-img)
+        14. [sideways-text](#sideways-text)
+        15. [size](#size)
+        16. [system-font](#system-font)
+        17. [truncate-line](#truncate-line)
+        18. [visually-hidden](#visually-hidden)
 5. [License](#license)
 
 ## Installation
@@ -741,8 +747,10 @@ Creates shadow based on an element's background
   z-index: -1;
 }
 ```
-#### enable-kerning
-*type: mixin*
+#### //     text-rendering: optimizeLegibility;
+///  }
+@mixin enable-kerning
+*type: css*
 
 Enables font kerning — improves spacing and fit of specific pairs of letters
 
@@ -755,10 +763,14 @@ Enables font kerning — improves spacing and fit of specific pairs of letters
 
 // Output
 .element {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  font-feature-settings: 'kern' 1;
 ```
+#### enable-kerning
+*type: mixin*
+
+}
+
+
 #### fluid-property
 *type: mixin*
 

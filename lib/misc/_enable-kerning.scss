@@ -7,8 +7,8 @@
 ///
 ///  // Output
 ///  .element {
-///    -webkit-font-smoothing: antialiased;
-///    -moz-osx-font-smoothing: grayscale;
+///    font-feature-settings: 'kern' 1;
+//     text-rendering: optimizeLegibility;
 ///  }
 @mixin enable-kerning {
   font-feature-settings: 'kern' 1;
