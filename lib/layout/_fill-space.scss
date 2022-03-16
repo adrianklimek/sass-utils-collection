@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 /// Stretch an element to fill its parent
 /// @param {string} $size [100%] - when it is smaller or greater than 100% content is also centered
 /// @param {string} $position [absolute]
@@ -29,8 +31,8 @@
 ///  }
 @mixin fill-space($size: 100%, $position: absolute) {
   position: $position;
+  top: math.div($size - 100%, -2);
+  left: math.div($size - 100%, -2);
   width: $size;
   height: $size;
-  top: ($size - 100%) / -2;
-  left: ($size - 100%) / -2;
 }

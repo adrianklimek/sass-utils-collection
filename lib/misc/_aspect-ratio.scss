@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 /// Sets width to height size ratio
 /// @param {number} $width [1]
 /// @param {number} $height [1]
@@ -44,8 +46,8 @@
     }
 
     &::before {
-      padding-top: $height / $width * 100%;
       float: left;
+      padding-top: math.div($height, $width) * 100%;
     }
 
     &::after {
@@ -56,9 +58,9 @@
     position: relative;
 
     &::before {
-      content: '';
       display: block;
-      padding-top: $height / $width * 100%;
+      padding-top: math.div($height, $width) * 100%;
+      content: '';
     }
   }
 }

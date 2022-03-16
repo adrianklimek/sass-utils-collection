@@ -10,8 +10,8 @@
 
       @include expect {
         &::placeholder {
-          opacity: 1;
           color: inherit;
+          opacity: 1;
         }
       }
     }

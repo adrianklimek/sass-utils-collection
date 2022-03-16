@@ -9,10 +9,10 @@
       }
 
       @include contains {
+        padding: 0;
         background: none;
         border: 0;
         border-radius: 0;
-        padding: 0;
         outline: none;
         box-shadow: none;
       }
@@ -22,12 +22,12 @@
   @include it('Removes browser\'s default number input styles when `$type` argument is set to `number`') {
     @include assert {
       @include output {
-        @include reset-input(number)
-      }
+        @include reset-input(number); }
 
       @include contains {
         -webkit-appearance: textfield;
         -moz-appearance: textfield;
+
         &::-webkit-inner-spin-button,
         &::-webkit-outer-spin-button {
           -webkit-appearance: none;

@@ -5,12 +5,12 @@
   @include it('sets value to multiple properties') {
     @include assert {
       @include output {
-        @include property(inherit, background, color);
+        @include property(inherit, color, background);
       }
 
       @include expect {
-        background: inherit;
         color: inherit;
+        background: inherit;
       }
     }
   }

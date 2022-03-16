@@ -9,14 +9,14 @@
       }
 
       @include expect {
+        padding: 0;
+        font: inherit;
+        color: inherit;
+        cursor: pointer;
         background: none;
         border: 0;
         border-radius: 0;
         outline: none;
-        padding: 0;
-        color: inherit;
-        font: inherit;
-        cursor: pointer;
 
         &::-moz-focus-inner {
           border: 0;
