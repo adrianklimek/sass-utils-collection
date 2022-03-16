@@ -33,7 +33,7 @@
   "devDependencies": {
     "glob": "^7.1.2",
     "jest": "^24.8.0",
-    "node-sass": "^4.9.2",
+    "node-sass": "^7.0.0",
     "sass-true": "^4.0.0",
     "sassdoc": "^2.7.0",
     "stylelint": "^9.9.0",
