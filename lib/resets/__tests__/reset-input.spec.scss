@@ -2,7 +2,7 @@
 @import '../reset-input';
 
 @include describe('[mixin] reset-input') {
-  @include it('removes `background`, `outline`, `padding`, `border`, `border-radius`, `box-shadow` properties and sets `background-clip to `content-box`') {
+  @include it('removes default styles of an input') {
     @include assert {
       @include output {
         @include reset-input;
@@ -10,7 +10,6 @@
 
       @include contains {
         background: none;
-        background-clip: content-box;
         border: 0;
         border-radius: 0;
         padding: 0;

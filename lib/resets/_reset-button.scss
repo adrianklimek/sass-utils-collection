@@ -19,6 +19,10 @@
 ///    font: inherit;
 ///    cursor: pointer;
 ///  }
+///
+///  .el::-moz-focus-inner {
+///    border: 0;
+///  }
 @mixin reset-button($cursor: pointer) {
   background: none;
 
@@ -30,4 +34,8 @@
   color: inherit;
   font: inherit;
   cursor: $cursor;
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
 }

@@ -1,3 +1,4 @@
+
 ![License](https://img.shields.io/npm/l/sass-utils-collection)
 # Sass utils collection
 :zap: A collection of sass mixins and functions 
@@ -479,7 +480,7 @@ Note: for cross-browser support additional code may be needed: https://github.co
 ```scss
 // Usage
 .element {
-  @include sticky-footer('.content');
+  @include sticky-footer(.content);
 }
 
 // Output
@@ -542,6 +543,10 @@ Resets a button's default styles
   font: inherit;
   cursor: pointer;
 }
+
+.el::-moz-focus-inner {
+  border: 0;
+}
 ```
 #### reset-input
 *type: mixin*
@@ -558,7 +563,6 @@ Resets a button's default styles
 // Output
 .element {
   background: none;
-  background-clip: content-box;
 
   border: 0;
   border-radius: 0;
@@ -752,8 +756,8 @@ Enables font kerning — improves spacing and fit of specific pairs of letters
 
 // Output
 .element {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'kern' 1;
+  text-rendering: optimizeLegibility;
 }
 ```
 #### fluid-property
