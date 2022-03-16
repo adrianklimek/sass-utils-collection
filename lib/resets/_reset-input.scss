@@ -1,5 +1,3 @@
-@import '../misc/prefix';
-
 ///  Resets an input's default styles
 /// @example scss
 ///  // Usage
@@ -20,7 +18,6 @@
 ///    box-shadow: none;
 ///  }
 @mixin reset-input($type: text) {
-
   padding: 0;
   background: none;
 

@@ -1,5 +1,5 @@
-@import '../../test';
-@import '../fluid-value';
+@use '../../test' as *;
+@use '../fluid-value' as *;
 
 @include describe('[function] fluid-value') {
   @include it('returns fluid value with `vw` as default unit') {

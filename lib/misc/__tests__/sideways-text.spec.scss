@@ -1,5 +1,5 @@
-@import '../../test';
-@import '../sideways-text';
+@use '../../test' as *;
+@use '../sideways-text' as *;
 
 @include describe('[mixin] sideways-text') {
   @include it('aligns vertical text to left by default') {

@@ -1,5 +1,5 @@
-@import '../../test';
-@import '../prefix';
+@use '../../test' as *;
+@use '../prefix' as *;
 
 @include describe('[mixin] prefix') {
   @include it('sets value to a property when there are no prefixes declared') {

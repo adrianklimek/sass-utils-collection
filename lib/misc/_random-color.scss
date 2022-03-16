@@ -1,3 +1,4 @@
+@use 'sass:math';
 /// Generates random rgba color
 /// @param {number} $alpha [1]
 /// @example scss
@@ -19,5 +20,5 @@
 ///    background-color: rgba(218, 230, 202, 0.8);
 ///  }
 @function random-color($alpha: 1) {
-  @return rgba(random(256), random(256), random(256), $alpha);
+  @return rgba(math.random(256), math.random(256), math.random(256), $alpha);
 }

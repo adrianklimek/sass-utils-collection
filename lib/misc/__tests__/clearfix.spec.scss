@@ -1,5 +1,5 @@
-@import '../../test';
-@import '../clearfix';
+@use '../../test' as *;
+@use '../clearfix' as *;
 
 @include describe('[mixin] clearfix') {
   @include it('sets `display` to `table` and `clear` to `both` on an element\'s `after` pseudo-element') {

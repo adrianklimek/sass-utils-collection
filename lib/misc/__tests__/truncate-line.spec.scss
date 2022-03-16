@@ -1,5 +1,5 @@
-@import '../../test';
-@import '../truncate-line';
+@use '../../test' as *;
+@use '../truncate-line' as *;
 
 @include describe('[mixin] truncate-line') {
   @include it('sets properties needed to truncate one line text') {

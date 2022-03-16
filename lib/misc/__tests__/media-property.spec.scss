@@ -1,5 +1,5 @@
-@import '../../test';
-@import '../media-property';
+@use '../../test' as *;
+@use '../media-property' as *;
 
 @include describe('[mixin] media-property') {
   @include it('sets a property for multiple breakpoints') {

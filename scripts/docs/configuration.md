@@ -1,7 +1,6 @@
 ## Configuration
 ### Media breakpoints
-Breakpoints values as well as breakpoint names can be overwritten 
-but has to correspond to breakpoint names in the grid configuration.
+Breakpoints values as well as breakpoint names can be overwritten.
 ##### Default
 ```
 $media-breakpoints: (

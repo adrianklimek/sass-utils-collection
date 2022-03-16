@@ -1,5 +1,5 @@
-@import '../../test';
-@import '../aspect-ratio';
+@use '../../test' as *;
+@use '../aspect-ratio' as *;
 
 @include describe('[mixin] aspect-ratio') {
   @include it('sets ratio to 1:1 as default one') {

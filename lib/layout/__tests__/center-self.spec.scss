@@ -1,5 +1,5 @@
-@import '../../test';
-@import '../center-self';
+@use '../../test' as *;
+@use '../center-self' as *;
 
 @include describe('[mixin] center-self') {
   @include it('centers element vertically and horizontally by default') {

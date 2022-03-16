@@ -1,8 +1,8 @@
 @use 'sass:math';
 
-@import '../../test';
-@import '../flexbox-grid';
-@import '../media';
+@use '../../test' as *;
+@use '../flexbox-grid' as *;
+@use '../media' as *;
 
 @include describe('[mixin] grid-container') {
   @include it('sets styles needed to create a container based on a configuration') {

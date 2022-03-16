@@ -1,4 +1,4 @@
-@import './media';
+@use 'media' as *;
 
 /// Hides element on a screen resolution equal or greater than given one
 /// @param {string} $breakpoint-name [null] - one of breakpoint names declared in the media configuration

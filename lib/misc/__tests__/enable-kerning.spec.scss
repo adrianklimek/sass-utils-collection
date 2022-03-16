@@ -1,5 +1,5 @@
-@import '../../test';
-@import '../enable-kerning';
+@use '../../test' as *;
+@use '../enable-kerning' as *;
 
 @include describe('[mixin] enable-kerning') {
   @include it('sets `font-feature-settings` and `text-rendering` properties') {

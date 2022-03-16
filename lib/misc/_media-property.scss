@@ -1,4 +1,4 @@
-@import '../layout/media';
+@use '../layout/media' as *;
 
 /// Sets a property for multiple breakpoints
 /// @param {string} $property

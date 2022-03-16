@@ -1,5 +1,5 @@
-@import '../../test';
-@import '../fill-space';
+@use '../../test' as *;
+@use '../fill-space' as *;
 
 @include describe('[mixin] fill-space') {
   @include it('sets size to 100% by default') {

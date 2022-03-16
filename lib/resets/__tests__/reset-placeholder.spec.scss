@@ -1,5 +1,5 @@
-@import '../../test';
-@import '../reset-placeholder';
+@use '../../test' as *;
+@use '../reset-placeholder' as *;
 
 @include describe('[mixin] reset-placeholder') {
   @include it('sets `opacity` to `1` and sets `color` to `inherit`') {

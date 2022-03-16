@@ -1,5 +1,5 @@
-@import '../../test';
-@import '../reset-button';
+@use '../../test' as *;
+@use '../reset-button' as *;
 
 @include describe('[mixin] reset-button') {
   @include it('removes button\'s default styles') {

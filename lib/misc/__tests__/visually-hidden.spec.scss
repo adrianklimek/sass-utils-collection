@@ -1,5 +1,5 @@
-@import '../../test';
-@import '../visually-hidden';
+@use '../../test' as *;
+@use '../visually-hidden' as *;
 
 @include describe('[mixin] visually-hidden') {
   @include it('sets properties needed to hide content on screens') {

@@ -1,5 +1,5 @@
-@import '../../test';
-@import '../fluid-property';
+@use '../../test' as *;
+@use '../fluid-property' as *;
 
 @include describe('[mixin] fluid-property') {
   @include it('returns fluid property with `width` media type as default') {

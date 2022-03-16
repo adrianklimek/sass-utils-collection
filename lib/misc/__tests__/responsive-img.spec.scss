@@ -1,5 +1,5 @@
-@import '../../test';
-@import '../responsive-img';
+@use '../../test' as *;
+@use '../responsive-img' as *;
 
 @include describe('[mixin] responsive-img') {
   @include it('sets `display` to `block` and `width` to `100%`') {
