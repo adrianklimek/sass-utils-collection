@@ -1,6 +1,6 @@
 {
   "name": "sass-utils-collection",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A collection of sass mixins and functions",
   "main": "index.scss",
   "directories": {
@@ -37,6 +37,7 @@
     "helpers"
   ],
   "devDependencies": {
+    "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^16.2.1",
     "glob": "^7.2.0",
     "husky": "^6.0.0",
@@ -57,8 +58,5 @@
   },
   "lint-staged": {
     "**/*.scss": "stylelint --fix"
-  },
-  "dependencies": {
-    "@commitlint/cli": "^16.2.3"
   }
 }
