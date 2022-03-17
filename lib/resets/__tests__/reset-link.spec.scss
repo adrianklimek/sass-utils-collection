@@ -1,5 +1,5 @@
-@import '../../test';
-@import '../reset-link';
+@use '../../test' as *;
+@use '../reset-link' as *;
 
 @include describe('[mixin] reset-link') {
   @include it('removes `text-decoration` and sets `color` to `inherit`') {
@@ -9,8 +9,8 @@
       }
 
       @include expect {
-        text-decoration: none;
         color: inherit;
+        text-decoration: none;
       }
     }
   }
@@ -22,8 +22,8 @@
       }
 
       @include expect {
-        text-decoration: none;
         color: red;
+        text-decoration: none;
       }
     }
   }

@@ -1,5 +1,5 @@
-@import '../../test';
-@import '../fluid-property';
+@use '../../test' as *;
+@use '../fluid-property' as *;
 
 @include describe('[mixin] fluid-property') {
   @include it('returns fluid property with `width` media type as default') {
@@ -11,7 +11,7 @@
       @include expect {
         width: 10px;
         @media (min-width: 375px) {
-          width: calc(1.22066vw + 5.42254px);
+          width: calc(1.220657277vw + 5.4225352113px);
         }
         @media (min-width: 1440px) {
           width: 23px;
@@ -29,7 +29,7 @@
       @include expect {
         height: 100px;
         @media (min-height: 768px) {
-          height: calc(19.53125vh + -50px);
+          height: calc(19.53125vh - 50px);
         }
         @media (min-height: 1280px) {
           height: 200px;

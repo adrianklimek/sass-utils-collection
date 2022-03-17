@@ -1,5 +1,5 @@
-@import '../../test';
-@import '../font-smoothing';
+@use '../../test' as *;
+@use '../font-smoothing' as *;
 
 @include describe('[mixin] font-smoothing') {
   @include it('sets the `font-smoothing` property for all available browsers') {

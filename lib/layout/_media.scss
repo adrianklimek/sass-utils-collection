@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 $media-breakpoints: (
   xs: 0,
   sm: 576px,
@@ -11,11 +13,11 @@ $media-breakpoints: (
 /// @param {boolean} $is-mobile-first [true]
 /// @param {string} $width [null] - custom width can be used instead of breakpoint name
 @mixin media($breakpoint: null, $is-mobile-first: true, $width: null) {
-  @if not $width and not map-has-key($media-breakpoints, $breakpoint) {
+  @if not $width and not map.has-key($media-breakpoints, $breakpoint) {
     @error '[media]: #{$breakpoint} is not defined';
   }
 
-  $breakpoint-width: if($width, $width, map-get($media-breakpoints, $breakpoint));
+  $breakpoint-width: if($width, $width, map.get($media-breakpoints, $breakpoint));
   @if ($breakpoint-width != 0) {
     $media: if($is-mobile-first, 'min-width: #{$breakpoint-width}', 'max-width: #{$breakpoint-width - 1}');
 

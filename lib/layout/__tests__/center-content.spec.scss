@@ -1,5 +1,5 @@
-@import '../../test';
-@import '../center-content';
+@use '../../test' as *;
+@use '../center-content' as *;
 
 @include describe('[mixin] center-content') {
   @include it('centers content vertically and horizontally by default') {
@@ -11,8 +11,8 @@
       @include expect {
         display: flex;
         flex-direction: row;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
       }
     }
   }

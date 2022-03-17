@@ -1,5 +1,5 @@
-@import '../../test';
-@import '../reset-appearance';
+@use '../../test' as * ;
+@use '../reset-appearance' as *;
 
 @include describe('[mixin] reset-appearance') {
   @include it('sets `appearance` to `none` with browsers prefixes') {

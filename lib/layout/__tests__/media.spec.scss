@@ -1,5 +1,5 @@
-@import '../../test';
-@import '../media';
+@use '../../test' as *;
+@use '../media' as *;
 
 @include describe('[mixin] media') {
   @include it('applies styles to screen resolutions equal or greater than given breakpoint by default') {

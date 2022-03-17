@@ -1,5 +1,5 @@
-@import '../../test';
-@import '../reset-list';
+@use '../../test' as *;
+@use '../reset-list' as *;
 
 @include describe('[mixin] reset-list') {
   @include it('removes default styles of a list') {
@@ -9,9 +9,9 @@
       }
 
       @include expect {
-        list-style: none;
         padding: 0;
         margin: 0;
+        list-style: none;
       }
     }
   }

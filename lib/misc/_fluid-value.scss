@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 /// Returns fluid value based on viewport size
 /// @param {number} $from
 /// @param {number} $to
@@ -23,8 +25,10 @@
 ///    font-size: calc(1.78571429vh + 10.2857142857px);
 ///  }
 @function fluid-value($from, $to, $media-from, $media-to, $unit: vw) {
-  $a: ($to - $from) / ($media-to - $media-from);
+  $a: math.div($to - $from, $media-to - $media-from);
   $b: $from - $a * $media-from;
 
-  @return calc(#{$a * 100 + $unit} + #{$b});
+  $sign: if($b < 0, '-', '+');
+
+  @return calc(#{$a * 100 + $unit} #{$sign} #{math.abs($b)});
 }

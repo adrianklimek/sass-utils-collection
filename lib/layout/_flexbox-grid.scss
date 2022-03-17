@@ -1,4 +1,5 @@
-@import './media';
+@use 'sass:math';
+@use 'media' as *;
 
 $grid-gutter: (
   xs: 16px,
@@ -25,9 +26,9 @@ $grid-container-width: (
 /// @param {number} $columns-count
 @function grid-column-width($breakpoint-name, $columns-count) {
   @if map-has-key($grid-columns, $breakpoint-name) {
-    @return $columns-count / map-get($grid-columns, $breakpoint-name) * 100%;
+    @return math.div($columns-count, map-get($grid-columns, $breakpoint-name)) * 100%;
   } @else {
-    @return $columns-count / map-get($grid-columns, default) * 100%;
+    @return math.div($columns-count, map-get($grid-columns, default)) * 100%;
   }
 }
 
@@ -48,8 +49,8 @@ $grid-container-width: (
 
   @each $breakpoint-name, $space in $grid-space-around {
     @include media-up($breakpoint-name) {
-      padding-left: $space;
       padding-right: $space;
+      padding-left: $space;
     }
   }
 }
@@ -61,8 +62,8 @@ $grid-container-width: (
 
   @each $breakpoint-name, $gutter in $grid-gutter {
     @include media-up($breakpoint-name) {
-      margin-left: $gutter / -2;
-      margin-right: $gutter / -2;
+      margin-right: math.div($gutter, -2);
+      margin-left: math.div($gutter, -2);
     }
   }
 }
@@ -70,9 +71,9 @@ $grid-container-width: (
 /// Sets a grid column width properties
 /// @param {string} $width
 @mixin set-grid-column-width($width) {
+  flex-basis: $width;
   width: $width;
   max-width: $width;
-  flex-basis: $width;
 }
 
 /// Sets a grid column width properties for nested column
@@ -81,7 +82,7 @@ $grid-container-width: (
 /// @param {string} $breakpoint-name - one of breakpoint names declared in the media configuration
 @mixin set-nested-column-width($columns-count, $container-size, $breakpoint-name) {
   @include set-grid-column-width(
-    grid-column-width($breakpoint-name, $columns-count) * (12 / $container-size)
+    grid-column-width($breakpoint-name, $columns-count) * math.div(12, $container-size)
   );
 }
 
@@ -93,8 +94,8 @@ $grid-container-width: (
 
   @each $breakpoint-name, $gutter in $grid-gutter {
     @include media-up($breakpoint-name) {
-      padding-left: $gutter / 2;
-      padding-right: $gutter / 2;
+      padding-right: $gutter * 0.5;
+      padding-left: $gutter * 0.5;
     }
   }
 

@@ -1,5 +1,5 @@
-@import '../../test';
-@import '../size';
+@use '../../test' as *;
+@use '../size' as *;
 
 @include describe('[mixin] size') {
   @include it('sets `width` and `height`') {

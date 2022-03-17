@@ -1,4 +1,4 @@
-@import './fluid-value';
+@use 'fluid-value' as *;
 
 /// Returns property with fluid value based on viewport size
 /// @param {string} $property

@@ -1,5 +1,5 @@
-@import '../../test';
-@import '../aspect-ratio';
+@use '../../test' as *;
+@use '../aspect-ratio' as *;
 
 @include describe('[mixin] aspect-ratio') {
   @include it('sets ratio to 1:1 as default one') {
@@ -12,9 +12,9 @@
         position: relative;
 
         &::before {
-          content: '';
           display: block;
           padding-top: 100%;
+          content: '';
         }
       }
     }
@@ -23,8 +23,7 @@
   @include it('allows element to grow when content takes more space than element size') {
     @include assert {
       @include output {
-        @include aspect-ratio(1, 1, true)
-      }
+        @include aspect-ratio(1, 1, true); }
 
       @include expect {
         &::before,
@@ -33,8 +32,8 @@
         }
 
         &::before {
-          padding-top: 100%;
           float: left;
+          padding-top: 100%;
         }
 
         &::after {
@@ -48,16 +47,15 @@
   @include it('sets aspect ratio') {
     @include assert {
       @include output {
-        @include aspect-ratio(16, 9)
-      }
+        @include aspect-ratio(16, 9); }
 
       @include expect {
         position: relative;
 
         &::before {
-          content: '';
           display: block;
           padding-top: 56.25%;
+          content: '';
         }
       }
     }

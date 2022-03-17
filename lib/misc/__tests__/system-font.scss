@@ -1,5 +1,5 @@
-@import '../../test';
-@import '../system-font';
+@use '../../test' as *;
+@use '../system-font' as *;
 
 @include describe('[mixin] system-font') {
   @include it('sets font family to system\'s default one') {

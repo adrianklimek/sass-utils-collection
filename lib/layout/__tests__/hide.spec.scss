@@ -1,6 +1,6 @@
-@import '../../test';
-@import '../hide';
-@import '../media';
+@use '../../test' as *;
+@use '../hide' as *;
+@use '../media' as *;
 
 @include describe('[mixin] hide-up') {
   @include it('hides element on a screen resolution equal or greater than given breakpoint') {
