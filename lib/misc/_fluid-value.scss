@@ -28,5 +28,7 @@
   $a: math.div($to - $from, $media-to - $media-from);
   $b: $from - $a * $media-from;
 
-  @return calc(#{$a * 100 + $unit} + #{$b});
+  $sign: if($b < 0, '-', '+');
+
+  @return calc(#{$a * 100 + $unit} #{$sign} #{math.abs($b)});
 }
